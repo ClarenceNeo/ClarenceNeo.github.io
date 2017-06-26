@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-26T11:52:52.000Z</updated>
+  <updated>2017-06-26T18:49:45.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,14 +17,14 @@
   
   <entry>
     <title>css 垂直居中</title>
-    <link href="http://yoursite.com/2017/06/26/css-%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
-    <id>http://yoursite.com/2017/06/26/css-垂直居中/</id>
+    <link href="http://yoursite.com/2017/06/26/CSS-%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80/"/>
+    <id>http://yoursite.com/2017/06/26/CSS-垂直居中布局/</id>
     <published>2017-06-26T11:49:06.000Z</published>
-    <updated>2017-06-26T11:52:52.000Z</updated>
+    <updated>2017-06-26T18:49:45.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>“44 年前我们就把人类送上月球了， 但现在我们仍然无法在 CSS 中 实现垂直居中。”</p>
-<p>——James Anderson（<a href="https://twitter.com/jsa/" target="_blank" rel="external">https://twitter.com/jsa/</a> status/358603820516917249）</p>
+<p>—— <a href="https://twitter.com/jsa/ status/358603820516917249" target="_blank" rel="external">James Anderson</a></p>
 </blockquote>
 <p>在 CSS 中对元素进行水平居中是非常简单的：</p>
 <ul>
@@ -35,7 +35,7 @@
 </ul>
 <p>但是一旦涉及到垂直居中绝对是一个难题。</p>
 <a id="more"></a>
-<h2 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h2><h3 id="表格布局法"><a href="#表格布局法" class="headerlink" title="表格布局法"></a>表格布局法</h3><h4 id="table-cell-vertical-align-middle"><a href="#table-cell-vertical-align-middle" class="headerlink" title="table-cell + vertical-align: middle;"></a>table-cell + vertical-align: middle;</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="表格布局法"><a href="#表格布局法" class="headerlink" title="表格布局法"></a>表格布局法</h3><h4 id="table-cell-vertical-align-middle"><a href="#table-cell-vertical-align-middle" class="headerlink" title="table-cell + vertical-align: middle;"></a>table-cell + vertical-align: middle;</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.24.10%20PM.png" alt=""></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">display</span>: table-cell;</div><div class="line">  <span class="attribute">verical-align</span>: middle;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>设置父元素，让它变为一个单元格，再增加 <code>verical-align: middle;</code> 属性。效果如下：</p>
@@ -47,16 +47,22 @@
 <h3 id="行内块法"><a href="#行内块法" class="headerlink" title="行内块法"></a>行内块法</h3><p><img src="http://oeryvxt85.bkt.clouddn.com/2017-06-26-ghost.png" alt=""></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"block"</span> <span class="attr">style</span>=<span class="string">"height: 300px;"</span>&gt;</span>    </div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"centered"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>But he stole up to us again, and suddenly clapping his hand on my shoulder, said&amp;mdash;"Did ye see anything looking like men going towards that ship a while ago?"<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>   </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"block"</span> <span class="attr">style</span>=<span class="string">"height: 200px;"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"centered"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>But he stole up to us again, and suddenly clapping his hand on my shoulder, said&amp;mdash;"Did ye see anything looking like men going towards that ship a while ago?"<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>    </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"block"</span> <span class="attr">style</span>=<span class="string">"height: 600px;"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"centered"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>But he stole up to us again, and suddenly clapping his hand on my shoulder, said&amp;mdash;"Did ye see anything looking like men going towards that ship a while ago?"<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>    </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">.block &#123;</div><div class="line">  text-align: center;</div><div class="line">  background: #c0c0c0;</div><div class="line">  border: #a0a0a0 solid 1px;</div><div class="line">  margin: 20px;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">.block:before &#123;</div><div class="line">  content: '\200B'; // 零宽度空格</div><div class="line">/*   content: '';</div><div class="line">  margin-left: -0.25em; */</div><div class="line">  display: inline-block;</div><div class="line">  height: 100%; </div><div class="line">  vertical-align: middle;</div><div class="line"> &#125;</div><div class="line"> </div><div class="line">.centered &#123;</div><div class="line">  display: inline-block;</div><div class="line">  vertical-align: middle;</div><div class="line">  width: 300px;</div><div class="line">  padding: 10px 15px;</div><div class="line">  border: #a0a0a0 solid 1px;</div><div class="line">  background: #f5f5f5;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<h2 id="基于绝对定位的方法"><a href="#基于绝对定位的方法" class="headerlink" title="基于绝对定位的方法"></a>基于绝对定位的方法</h2><h3 id="已知元素宽高"><a href="#已知元素宽高" class="headerlink" title="已知元素宽高"></a>已知元素宽高</h3><p><img src="http://oeryvxt85.bkt.clouddn.com/2017-06-26-Screen%20Shot%202017-06-26%20at%205.24.14%20PM.png" alt=""></p>
-<h4 id="方法一：absolute-margin"><a href="#方法一：absolute-margin" class="headerlink" title="方法一：absolute + margin"></a>方法一：absolute + margin</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">main</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute; </div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>; </div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>; </div><div class="line">  <span class="attribute">margin-top</span>: -<span class="number">3em</span>; <span class="comment">/* 6/2 = 3 */</span></div><div class="line">  <span class="attribute">margin-left</span>: -<span class="number">9em</span>; <span class="comment">/* 18/2 = 9 */</span> </div><div class="line">  <span class="attribute">width</span>: <span class="number">18em</span>; </div><div class="line">  <span class="attribute">height</span>: <span class="number">6em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="方法二：absolute-calc"><a href="#方法二：absolute-calc" class="headerlink" title="方法二：absolute + calc()"></a>方法二：absolute + calc()</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">main</span> &#123; </div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="built_in">calc</span>(50% - 3em);</div><div class="line">  <span class="attribute">left</span>: <span class="built_in">calc</span>(50% - 9em); </div><div class="line">  <span class="attribute">width</span>: <span class="number">18em</span>; </div><div class="line">  <span class="attribute">height</span>: <span class="number">6em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="元素宽高未知"><a href="#元素宽高未知" class="headerlink" title="元素宽高未知"></a>元素宽高未知</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">main</span> &#123; </div><div class="line">  <span class="attribute">position</span>: absolute; </div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>; </div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>; </div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="基于绝对定位的方法"><a href="#基于绝对定位的方法" class="headerlink" title="基于绝对定位的方法"></a>基于绝对定位的方法</h2><h4 id="已知元素宽高"><a href="#已知元素宽高" class="headerlink" title="已知元素宽高"></a>已知元素宽高</h4><p><img src="http://oeryvxt85.bkt.clouddn.com/2017-06-26-Screen%20Shot%202017-06-26%20at%205.24.14%20PM.png" alt=""></p>
+<ul>
+<li>方法一：absolute + margin</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">main</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute; </div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>; </div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>; </div><div class="line">  <span class="attribute">margin-top</span>: -<span class="number">3em</span>; <span class="comment">/* 6/2 = 3 */</span></div><div class="line">  <span class="attribute">margin-left</span>: -<span class="number">9em</span>; <span class="comment">/* 18/2 = 9 */</span> </div><div class="line">  <span class="attribute">width</span>: <span class="number">18em</span>; </div><div class="line">  <span class="attribute">height</span>: <span class="number">6em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>方法二：absolute + calc()</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">main</span> &#123; </div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="built_in">calc</span>(50% - 3em);</div><div class="line">  <span class="attribute">left</span>: <span class="built_in">calc</span>(50% - 9em); </div><div class="line">  <span class="attribute">width</span>: <span class="number">18em</span>; </div><div class="line">  <span class="attribute">height</span>: <span class="number">6em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="元素宽高未知"><a href="#元素宽高未知" class="headerlink" title="元素宽高未知"></a>元素宽高未知</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">main</span> &#123; </div><div class="line">  <span class="attribute">position</span>: absolute; </div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>; </div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>; </div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="基于视口单位的解决方案"><a href="#基于视口单位的解决方案" class="headerlink" title="基于视口单位的解决方案"></a>基于视口单位的解决方案</h2><p>使用基于视口高度的单位（vw, vh）。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">main</span> &#123; </div><div class="line">  <span class="attribute">width</span>: <span class="number">18em</span>; </div><div class="line">  <span class="attribute">padding</span>: <span class="number">1em</span> <span class="number">1.5em</span>; </div><div class="line">  <span class="attribute">margin</span>: <span class="number">50vh</span> auto <span class="number">0</span>; </div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>适用局限，只适用于相对于窗口居中。</p>
 <h2 id="基于-Flexbox-的解决方案"><a href="#基于-Flexbox-的解决方案" class="headerlink" title="基于 Flexbox 的解决方案"></a>基于 Flexbox 的解决方案</h2><p>先给这个待居中元素的父元素设置 <code>display: flex</code> （在这个例子中是 <body> 元素），再给这个元素自身设置 <code>margin: auto</code></body></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">body &#123; </div><div class="line">  display: flex; </div><div class="line">  min-height: 100vh; </div><div class="line">  margin: 0; </div><div class="line">&#125;</div><div class="line"></div><div class="line">main &#123; </div><div class="line">  margin: auto; // 水平垂直居中</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="将匿名容器（即没有被标签包裹-的文本节点）垂直居中"><a href="#将匿名容器（即没有被标签包裹-的文本节点）垂直居中" class="headerlink" title="将匿名容器（即没有被标签包裹 的文本节点）垂直居中"></a>将匿名容器（即没有被标签包裹 的文本节点）垂直居中</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span>Center me, please!<span class="tag">&lt;/<span class="name">main</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="将匿名容器（即没有被标签包裹-的文本节点）垂直居中"><a href="#将匿名容器（即没有被标签包裹-的文本节点）垂直居中" class="headerlink" title="将匿名容器（即没有被标签包裹 的文本节点）垂直居中"></a>将匿名容器（即没有被标签包裹 的文本节点）垂直居中</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span>Center me, please!<span class="tag">&lt;/<span class="name">main</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">main &#123; </div><div class="line">  display: flex; </div><div class="line">  align-items: center; </div><div class="line">  justify-content: center; </div><div class="line">  width: 18em; </div><div class="line">  height: 10em; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
     
@@ -64,7 +70,7 @@
     
       &lt;blockquote&gt;
 &lt;p&gt;“44 年前我们就把人类送上月球了， 但现在我们仍然无法在 CSS 中 实现垂直居中。”&lt;/p&gt;
-&lt;p&gt;——James Anderson（&lt;a href=&quot;https://twitter.com/jsa/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://twitter.com/jsa/&lt;/a&gt; status/358603820516917249）&lt;/p&gt;
+&lt;p&gt;—— &lt;a href=&quot;https://twitter.com/jsa/ status/358603820516917249&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;James Anderson&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;在 CSS 中对元素进行水平居中是非常简单的：&lt;/p&gt;
 &lt;ul&gt;
@@ -85,34 +91,47 @@
     <link href="http://yoursite.com/2017/02/19/gitbook-1/"/>
     <id>http://yoursite.com/2017/02/19/gitbook-1/</id>
     <published>2017-02-19T06:54:57.000Z</published>
-    <updated>2017-02-19T07:17:45.000Z</updated>
+    <updated>2017-06-26T18:54:59.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近尝试用 GitBook 发布笔记，但是在创建的时候发现有不少困难，网上的教程有不能完美解决（大多内容比较老），故把我的创建过程记录下来，以供参考。</p>
 <h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ul>
-<li>申请 <a href="[How people build software · GitHub](https://github.com/">GitHub 账号</a> )。</li>
-<li>申请 <a href="[GitBook · Documentation made easy](https://www.gitbook.com">GitBook 账号</a> )(可以通过 GitHub 账号登录)。</li>
+<li>申请 <a href="https://github.com/" target="_blank" rel="external">GitHub 账号</a>。</li>
+<li>申请 <a href="https://www.gitbook.com" target="_blank" rel="external">GitBook 账号</a>(可以通过 GitHub 账号登录)。</li>
 </ul>
 <a id="more"></a>
-<h2 id="新建个人仓库"><a href="#新建个人仓库" class="headerlink" title="新建个人仓库"></a>新建个人仓库</h2><h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><ol>
-<li>点击屏幕右上角的「+」号，选择「New repository」，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.36.34%20PM.png" alt=""></li>
-<li>填写项目名称,最好与你的 GitBook 电子书的名字一致,这样可以方便管理，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.42.49%20PM.png" alt=""></li>
-<li>翻到创建好的页面最下方，点击「Import code」，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.47.35%20PM.png" alt=""></li>
-<li>进入「Import your project to GitHub」页面，先停留在这个页面，我们开始进入 GitBook 界面进行设置。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.50.17%20PM.png" alt=""></li>
+<h2 id="新建个人仓库"><a href="#新建个人仓库" class="headerlink" title="新建个人仓库"></a>新建个人仓库</h2><h4 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h4><ol>
+<li><p>点击屏幕右上角的「+」号，选择「New repository」，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.36.34%20PM.png" alt=""></p>
+</li>
+<li><p>填写项目名称,最好与你的 GitBook 电子书的名字一致,这样可以方便管理，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.42.49%20PM.png" alt=""></p>
+</li>
+<li><p>翻到创建好的页面最下方，点击「Import code」，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.47.35%20PM.png" alt=""></p>
+</li>
+<li><p>进入「Import your project to GitHub」页面，先停留在这个页面，我们开始进入 GitBook 界面进行设置。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.50.17%20PM.png" alt=""></p>
+</li>
 </ol>
-<h3 id="GitBook"><a href="#GitBook" class="headerlink" title="GitBook"></a>GitBook</h3><ol>
-<li>打开 GitBook 页面，点击右上角「+ New Book」按钮，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.53.18%20PM.png" alt=""></li>
-<li>进入「Create a new book」页面，按如图所示设置，然后点击「Create Book」按钮：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.55.11%20PM.png" alt=""></li>
-<li>打开「SETTINGS」选项卡，点击「Edit」标签的三角符号，然后复制下面那行地址，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19--Users-Clarence-Desktop-Screen%20Shot%202017-02-19%20at%201.58.29%20PM.png" alt=""></li>
+<h4 id="GitBook"><a href="#GitBook" class="headerlink" title="GitBook"></a>GitBook</h4><ol>
+<li><p>打开 GitBook 页面，点击右上角「+ New Book」按钮，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.53.18%20PM.png" alt=""></p>
+</li>
+<li><p>进入「Create a new book」页面，按如图所示设置，然后点击「Create Book」按钮：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.55.11%20PM.png" alt=""></p>
+</li>
+<li><p>打开「SETTINGS」选项卡，点击「Edit」标签的三角符号，然后复制下面那行地址，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19--Users-Clarence-Desktop-Screen%20Shot%202017-02-19%20at%201.58.29%20PM.png" alt=""></p>
+</li>
 </ol>
 <h2 id="绑定-GitHub-与-GitBook"><a href="#绑定-GitHub-与-GitBook" class="headerlink" title="绑定 GitHub 与 GitBook"></a>绑定 GitHub 与 GitBook</h2><ol>
-<li>返回 GitHub 停留的页面，把复制的地址粘贴进去，点击「Begin import」。如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.06.09%20PM-1.png" alt=""></li>
-<li>输入 GitBook 账号密码进行绑定（注意是 GitBook 的账号密码）。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.06.09%20PM-1.png" alt=""></li>
-<li>出现如下所示页面，表示创建完成（可以进入个人仓库看看是否有 GitBook 中的文件）。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.12.37%20PM.png" alt=""></li>
-<li>返回 GitBook 的「SETTINGS」，选择「GitHub」选项卡，然后在右侧选择刚刚创建的仓库，然后点击「sync」。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.19.45%20PM.png" alt=""></li>
-<li>出现如下界面表示绑定成功。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.23.25%20PM.png" alt=""></li>
-<li>然后，进入 GitHub 进行修改，看看 GitBook 是否同步吧。</li>
+<li><p>返回 GitHub 停留的页面，把复制的地址粘贴进去，点击「Begin import」。如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.06.09%20PM-1.png" alt=""></p>
+</li>
+<li><p>输入 GitBook 账号密码进行绑定（注意是 GitBook 的账号密码）。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.06.09%20PM-1.png" alt=""></p>
+</li>
+<li><p>出现如下所示页面，表示创建完成（可以进入个人仓库看看是否有 GitBook 中的文件）。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.12.37%20PM.png" alt=""></p>
+</li>
+<li><p>返回 GitBook 的「SETTINGS」，选择「GitHub」选项卡，然后在右侧选择刚刚创建的仓库，然后点击「sync」。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.19.45%20PM.png" alt=""></p>
+</li>
+<li><p>出现如下界面表示绑定成功。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.23.25%20PM.png" alt=""></p>
+</li>
+<li><p>然后，进入 GitHub 进行修改，看看 GitBook 是否同步吧。</p>
+</li>
 </ol>
-<h3 id="番外-GitHub-integration"><a href="#番外-GitHub-integration" class="headerlink" title="番外 GitHub integration"></a>番外 GitHub integration</h3><p>如果出现设置 GitHub integration 可以参考<a href="https://help.gitbook.com/github/can-i-host-on-github.html#github-integration" target="_blank" rel="external">页面</a>，值得注意的是如下这个设置：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-select-github-integration-repositories.png" alt=""></p>
+<h4 id="番外-GitHub-integration"><a href="#番外-GitHub-integration" class="headerlink" title="番外 GitHub integration"></a>番外 GitHub integration</h4><p>如果出现设置 GitHub integration 可以参考<a href="https://help.gitbook.com/github/can-i-host-on-github.html#github-integration" target="_blank" rel="external">页面</a>，值得注意的是如下这个设置：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-select-github-integration-repositories.png" alt=""></p>
 <p>如果你选择的是默认的「Only select repositories」选项，可能导致以后创建新的内容时找不到GitHub 上的仓库。</p>
 <h2 id="发布更新"><a href="#发布更新" class="headerlink" title="发布更新"></a>发布更新</h2><p>有时在 GitHub 的更改经常更新不成功，这个问题不知道大家有没有出现，如果没有可以忽略。以下是我的解决方法，在设置中更改版本，点击「Save」，如下图所示：</p>
 <p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.35.11%20PM.png" alt=""></p>
@@ -122,8 +141,8 @@
     
       &lt;p&gt;最近尝试用 GitBook 发布笔记，但是在创建的时候发现有不少困难，网上的教程有不能完美解决（大多内容比较老），故把我的创建过程记录下来，以供参考。&lt;/p&gt;
 &lt;h2 id=&quot;前期准备&quot;&gt;&lt;a href=&quot;#前期准备&quot; class=&quot;headerlink&quot; title=&quot;前期准备&quot;&gt;&lt;/a&gt;前期准备&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;申请 &lt;a href=&quot;[How people build software · GitHub](https://github.com/&quot;&gt;GitHub 账号&lt;/a&gt; )。&lt;/li&gt;
-&lt;li&gt;申请 &lt;a href=&quot;[GitBook · Documentation made easy](https://www.gitbook.com&quot;&gt;GitBook 账号&lt;/a&gt; )(可以通过 GitHub 账号登录)。&lt;/li&gt;
+&lt;li&gt;申请 &lt;a href=&quot;https://github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub 账号&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;申请 &lt;a href=&quot;https://www.gitbook.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitBook 账号&lt;/a&gt;(可以通过 GitHub 账号登录)。&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -133,14 +152,13 @@
   
   <entry>
     <title>居中布局</title>
-    <link href="http://yoursite.com/2017/02/09/%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80/"/>
-    <id>http://yoursite.com/2017/02/09/居中布局/</id>
+    <link href="http://yoursite.com/2017/02/09/CSS-%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80/"/>
+    <id>http://yoursite.com/2017/02/09/CSS-居中布局/</id>
     <published>2017-02-09T11:05:18.000Z</published>
-    <updated>2017-02-10T06:39:05.000Z</updated>
+    <updated>2017-06-26T18:58:45.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%2052448%20PM.jpg" alt=""></p>
 <h3 id="inline-block-text-align"><a href="#inline-block-text-align" class="headerlink" title="inline-block + text-align"></a>inline-block + text-align</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
 <p>效果：</p>
 <p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%205.34.24%20PM.png" alt=""></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -243,17 +261,10 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;水平居中&quot;&gt;&lt;a href=&quot;#水平居中&quot; class=&quot;headerlink&quot; title=&quot;水平居中&quot;&gt;&lt;/a&gt;水平居中&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%2052448%20PM.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;inline-block-text-align&quot;&gt;&lt;a href=&quot;#inline-block-text-align&quot; class=&quot;headerlink&quot; title=&quot;inline-block + text-align&quot;&gt;&lt;/a&gt;inline-block + text-align&lt;/h3&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;parent&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;child&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;DEMO&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h2 id=&quot;水平居中&quot;&gt;&lt;a href=&quot;#水平居中&quot; class=&quot;headerlink&quot; title=&quot;水平居中&quot;&gt;&lt;/a&gt;水平居中&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%2
     
     </summary>
     
-      <category term="tech" scheme="http://yoursite.com/categories/tech/"/>
-    
-    
-      <category term="html" scheme="http://yoursite.com/tags/html/"/>
-    
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
     
   </entry>
   
