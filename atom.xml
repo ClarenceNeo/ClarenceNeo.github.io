@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-26T11:20:47.000Z</updated>
+  <updated>2017-06-26T11:52:52.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,28 +16,828 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/06/26/hello-world/"/>
-    <id>http://yoursite.com/2017/06/26/hello-world/</id>
-    <published>2017-06-26T11:20:47.000Z</published>
-    <updated>2017-06-26T11:20:47.000Z</updated>
+    <title>css 垂直居中</title>
+    <link href="http://yoursite.com/2017/06/26/css-%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
+    <id>http://yoursite.com/2017/06/26/css-垂直居中/</id>
+    <published>2017-06-26T11:49:06.000Z</published>
+    <updated>2017-06-26T11:52:52.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <content type="html"><![CDATA[<blockquote>
+<p>“44 年前我们就把人类送上月球了， 但现在我们仍然无法在 CSS 中 实现垂直居中。”</p>
+<p>——James Anderson（<a href="https://twitter.com/jsa/" target="_blank" rel="external">https://twitter.com/jsa/</a> status/358603820516917249）</p>
+</blockquote>
+<p>在 CSS 中对元素进行水平居中是非常简单的：</p>
+<ul>
+<li><p>如果它是一个行内元素， 就对它的父元素应用 text-align: center ；</p>
+</li>
+<li><p>如果它是一个块级元素，就对 它自身应用 margin: auto 。</p>
+</li>
+</ul>
+<p>但是一旦涉及到垂直居中绝对是一个难题。</p>
+<a id="more"></a>
+<h2 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h2><h3 id="表格布局法"><a href="#表格布局法" class="headerlink" title="表格布局法"></a>表格布局法</h3><h4 id="table-cell-vertical-align-middle"><a href="#table-cell-vertical-align-middle" class="headerlink" title="table-cell + vertical-align: middle;"></a>table-cell + vertical-align: middle;</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.24.10%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">display</span>: table-cell;</div><div class="line">  <span class="attribute">verical-align</span>: middle;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>设置父元素，让它变为一个单元格，再增加 <code>verical-align: middle;</code> 属性。效果如下：</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.27.53%20PM.png" alt=""></p>
+<p>优点：兼容性比较好（IE8 以上，兼容性解决：把 HTML 结构换为表结构）。</p>
+<h4 id="table-table-cell-vertical-align-middle"><a href="#table-table-cell-vertical-align-middle" class="headerlink" title="table + table-cell + vertical-align: middle;"></a>table + table-cell + vertical-align: middle;</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span></div><div class="line">       Unknown stuff to be centered.</div><div class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span> &#123;</div><div class="line">  <span class="attribute">display</span>: table;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.child</span> &#123;</div><div class="line">  <span class="attribute">display</span>: table-cell;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">  <span class="attribute">vertical-align</span>: middle;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>优点：兼容性好。<br>缺点：需要用到一些冗余的 HTML 元素。</p>
+<h3 id="行内块法"><a href="#行内块法" class="headerlink" title="行内块法"></a>行内块法</h3><p><img src="http://oeryvxt85.bkt.clouddn.com/2017-06-26-ghost.png" alt=""></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"block"</span> <span class="attr">style</span>=<span class="string">"height: 300px;"</span>&gt;</span>    </div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"centered"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>But he stole up to us again, and suddenly clapping his hand on my shoulder, said&amp;mdash;"Did ye see anything looking like men going towards that ship a while ago?"<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>   </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"block"</span> <span class="attr">style</span>=<span class="string">"height: 200px;"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"centered"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>But he stole up to us again, and suddenly clapping his hand on my shoulder, said&amp;mdash;"Did ye see anything looking like men going towards that ship a while ago?"<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>    </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"block"</span> <span class="attr">style</span>=<span class="string">"height: 600px;"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"centered"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>But he stole up to us again, and suddenly clapping his hand on my shoulder, said&amp;mdash;"Did ye see anything looking like men going towards that ship a while ago?"<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>    </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">.block &#123;</div><div class="line">  text-align: center;</div><div class="line">  background: #c0c0c0;</div><div class="line">  border: #a0a0a0 solid 1px;</div><div class="line">  margin: 20px;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">.block:before &#123;</div><div class="line">  content: '\200B'; // 零宽度空格</div><div class="line">/*   content: '';</div><div class="line">  margin-left: -0.25em; */</div><div class="line">  display: inline-block;</div><div class="line">  height: 100%; </div><div class="line">  vertical-align: middle;</div><div class="line"> &#125;</div><div class="line"> </div><div class="line">.centered &#123;</div><div class="line">  display: inline-block;</div><div class="line">  vertical-align: middle;</div><div class="line">  width: 300px;</div><div class="line">  padding: 10px 15px;</div><div class="line">  border: #a0a0a0 solid 1px;</div><div class="line">  background: #f5f5f5;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h2 id="基于绝对定位的方法"><a href="#基于绝对定位的方法" class="headerlink" title="基于绝对定位的方法"></a>基于绝对定位的方法</h2><h3 id="已知元素宽高"><a href="#已知元素宽高" class="headerlink" title="已知元素宽高"></a>已知元素宽高</h3><p><img src="http://oeryvxt85.bkt.clouddn.com/2017-06-26-Screen%20Shot%202017-06-26%20at%205.24.14%20PM.png" alt=""></p>
+<h4 id="方法一：absolute-margin"><a href="#方法一：absolute-margin" class="headerlink" title="方法一：absolute + margin"></a>方法一：absolute + margin</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">main</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute; </div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>; </div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>; </div><div class="line">  <span class="attribute">margin-top</span>: -<span class="number">3em</span>; <span class="comment">/* 6/2 = 3 */</span></div><div class="line">  <span class="attribute">margin-left</span>: -<span class="number">9em</span>; <span class="comment">/* 18/2 = 9 */</span> </div><div class="line">  <span class="attribute">width</span>: <span class="number">18em</span>; </div><div class="line">  <span class="attribute">height</span>: <span class="number">6em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="方法二：absolute-calc"><a href="#方法二：absolute-calc" class="headerlink" title="方法二：absolute + calc()"></a>方法二：absolute + calc()</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">main</span> &#123; </div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="built_in">calc</span>(50% - 3em);</div><div class="line">  <span class="attribute">left</span>: <span class="built_in">calc</span>(50% - 9em); </div><div class="line">  <span class="attribute">width</span>: <span class="number">18em</span>; </div><div class="line">  <span class="attribute">height</span>: <span class="number">6em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="元素宽高未知"><a href="#元素宽高未知" class="headerlink" title="元素宽高未知"></a>元素宽高未知</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">main</span> &#123; </div><div class="line">  <span class="attribute">position</span>: absolute; </div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>; </div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>; </div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="基于视口单位的解决方案"><a href="#基于视口单位的解决方案" class="headerlink" title="基于视口单位的解决方案"></a>基于视口单位的解决方案</h2><p>使用基于视口高度的单位（vw, vh）。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">main</span> &#123; </div><div class="line">  <span class="attribute">width</span>: <span class="number">18em</span>; </div><div class="line">  <span class="attribute">padding</span>: <span class="number">1em</span> <span class="number">1.5em</span>; </div><div class="line">  <span class="attribute">margin</span>: <span class="number">50vh</span> auto <span class="number">0</span>; </div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>适用局限，只适用于相对于窗口居中。</p>
+<h2 id="基于-Flexbox-的解决方案"><a href="#基于-Flexbox-的解决方案" class="headerlink" title="基于 Flexbox 的解决方案"></a>基于 Flexbox 的解决方案</h2><p>先给这个待居中元素的父元素设置 <code>display: flex</code> （在这个例子中是 <body> 元素），再给这个元素自身设置 <code>margin: auto</code></body></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">body &#123; </div><div class="line">  display: flex; </div><div class="line">  min-height: 100vh; </div><div class="line">  margin: 0; </div><div class="line">&#125;</div><div class="line"></div><div class="line">main &#123; </div><div class="line">  margin: auto; // 水平垂直居中</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="将匿名容器（即没有被标签包裹-的文本节点）垂直居中"><a href="#将匿名容器（即没有被标签包裹-的文本节点）垂直居中" class="headerlink" title="将匿名容器（即没有被标签包裹 的文本节点）垂直居中"></a>将匿名容器（即没有被标签包裹 的文本节点）垂直居中</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span>Center me, please!<span class="tag">&lt;/<span class="name">main</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">main &#123; </div><div class="line">  display: flex; </div><div class="line">  align-items: center; </div><div class="line">  justify-content: center; </div><div class="line">  width: 18em; </div><div class="line">  height: 10em; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;blockquote&gt;
+&lt;p&gt;“44 年前我们就把人类送上月球了， 但现在我们仍然无法在 CSS 中 实现垂直居中。”&lt;/p&gt;
+&lt;p&gt;——James Anderson（&lt;a href=&quot;https://twitter.com/jsa/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://twitter.com/jsa/&lt;/a&gt; status/358603820516917249）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在 CSS 中对元素进行水平居中是非常简单的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;如果它是一个行内元素， 就对它的父元素应用 text-align: center ；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果它是一个块级元素，就对 它自身应用 margin: auto 。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是一旦涉及到垂直居中绝对是一个难题。&lt;/p&gt;
     
     </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>GitBook 使用指南</title>
+    <link href="http://yoursite.com/2017/02/19/gitbook-1/"/>
+    <id>http://yoursite.com/2017/02/19/gitbook-1/</id>
+    <published>2017-02-19T06:54:57.000Z</published>
+    <updated>2017-02-19T07:17:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近尝试用 GitBook 发布笔记，但是在创建的时候发现有不少困难，网上的教程有不能完美解决（大多内容比较老），故把我的创建过程记录下来，以供参考。</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ul>
+<li>申请 <a href="[How people build software · GitHub](https://github.com/">GitHub 账号</a> )。</li>
+<li>申请 <a href="[GitBook · Documentation made easy](https://www.gitbook.com">GitBook 账号</a> )(可以通过 GitHub 账号登录)。</li>
+</ul>
+<a id="more"></a>
+<h2 id="新建个人仓库"><a href="#新建个人仓库" class="headerlink" title="新建个人仓库"></a>新建个人仓库</h2><h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><ol>
+<li>点击屏幕右上角的「+」号，选择「New repository」，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.36.34%20PM.png" alt=""></li>
+<li>填写项目名称,最好与你的 GitBook 电子书的名字一致,这样可以方便管理，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.42.49%20PM.png" alt=""></li>
+<li>翻到创建好的页面最下方，点击「Import code」，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.47.35%20PM.png" alt=""></li>
+<li>进入「Import your project to GitHub」页面，先停留在这个页面，我们开始进入 GitBook 界面进行设置。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.50.17%20PM.png" alt=""></li>
+</ol>
+<h3 id="GitBook"><a href="#GitBook" class="headerlink" title="GitBook"></a>GitBook</h3><ol>
+<li>打开 GitBook 页面，点击右上角「+ New Book」按钮，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.53.18%20PM.png" alt=""></li>
+<li>进入「Create a new book」页面，按如图所示设置，然后点击「Create Book」按钮：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.55.11%20PM.png" alt=""></li>
+<li>打开「SETTINGS」选项卡，点击「Edit」标签的三角符号，然后复制下面那行地址，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19--Users-Clarence-Desktop-Screen%20Shot%202017-02-19%20at%201.58.29%20PM.png" alt=""></li>
+</ol>
+<h2 id="绑定-GitHub-与-GitBook"><a href="#绑定-GitHub-与-GitBook" class="headerlink" title="绑定 GitHub 与 GitBook"></a>绑定 GitHub 与 GitBook</h2><ol>
+<li>返回 GitHub 停留的页面，把复制的地址粘贴进去，点击「Begin import」。如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.06.09%20PM-1.png" alt=""></li>
+<li>输入 GitBook 账号密码进行绑定（注意是 GitBook 的账号密码）。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.06.09%20PM-1.png" alt=""></li>
+<li>出现如下所示页面，表示创建完成（可以进入个人仓库看看是否有 GitBook 中的文件）。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.12.37%20PM.png" alt=""></li>
+<li>返回 GitBook 的「SETTINGS」，选择「GitHub」选项卡，然后在右侧选择刚刚创建的仓库，然后点击「sync」。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.19.45%20PM.png" alt=""></li>
+<li>出现如下界面表示绑定成功。<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.23.25%20PM.png" alt=""></li>
+<li>然后，进入 GitHub 进行修改，看看 GitBook 是否同步吧。</li>
+</ol>
+<h3 id="番外-GitHub-integration"><a href="#番外-GitHub-integration" class="headerlink" title="番外 GitHub integration"></a>番外 GitHub integration</h3><p>如果出现设置 GitHub integration 可以参考<a href="https://help.gitbook.com/github/can-i-host-on-github.html#github-integration" target="_blank" rel="external">页面</a>，值得注意的是如下这个设置：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-select-github-integration-repositories.png" alt=""></p>
+<p>如果你选择的是默认的「Only select repositories」选项，可能导致以后创建新的内容时找不到GitHub 上的仓库。</p>
+<h2 id="发布更新"><a href="#发布更新" class="headerlink" title="发布更新"></a>发布更新</h2><p>有时在 GitHub 的更改经常更新不成功，这个问题不知道大家有没有出现，如果没有可以忽略。以下是我的解决方法，在设置中更改版本，点击「Save」，如下图所示：</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%202.35.11%20PM.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近尝试用 GitBook 发布笔记，但是在创建的时候发现有不少困难，网上的教程有不能完美解决（大多内容比较老），故把我的创建过程记录下来，以供参考。&lt;/p&gt;
+&lt;h2 id=&quot;前期准备&quot;&gt;&lt;a href=&quot;#前期准备&quot; class=&quot;headerlink&quot; title=&quot;前期准备&quot;&gt;&lt;/a&gt;前期准备&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;申请 &lt;a href=&quot;[How people build software · GitHub](https://github.com/&quot;&gt;GitHub 账号&lt;/a&gt; )。&lt;/li&gt;
+&lt;li&gt;申请 &lt;a href=&quot;[GitBook · Documentation made easy](https://www.gitbook.com&quot;&gt;GitBook 账号&lt;/a&gt; )(可以通过 GitHub 账号登录)。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>居中布局</title>
+    <link href="http://yoursite.com/2017/02/09/%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80/"/>
+    <id>http://yoursite.com/2017/02/09/居中布局/</id>
+    <published>2017-02-09T11:05:18.000Z</published>
+    <updated>2017-02-10T06:39:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%2052448%20PM.jpg" alt=""></p>
+<h3 id="inline-block-text-align"><a href="#inline-block-text-align" class="headerlink" title="inline-block + text-align"></a>inline-block + text-align</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>效果：</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%205.34.24%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>增加 <code>CSS</code> 属性 <code>inline-block</code> 它的特点是内容有多宽，它就有多宽。效果如下：</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%205.35.22%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>CSS</code> 的 <code>text-align</code> 属性对 <code>inline</code> 元素是起作用的，所以在父元素上设置 <code>text-align: center;</code> 效果如下：</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%205.39.53%20PM.png" alt=""></p>
+<p>优点：兼容性好。（不支持 IE6、IE7）</p>
+<p>兼容性解决方法：</p>
+<ul>
+<li>模拟 <code>inline-block</code> 方法：<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">display: inline;</div><div class="line">room: 1;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>缺点：父容器设置 <code>text-align: center;</code> 子元素会继承，导致 DEMO 文字也是居中对齐的。</p>
+<p>解决方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.child&#123;</div><div class="line">  display: inline-block;</div><div class="line">  text-align: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="table-margin"><a href="#table-margin" class="headerlink" title="table + margin"></a>table + margin</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">display</span>: table;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>效果：</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%205.35.22%20PM.png" alt=""></p>
+<p>属性 为 <code>display: table;</code> 的元素，宽度也是内容宽度，但是依然是 <code>block</code> 元素，所以设置 <code>block</code> 元素居中的方法如下（因为 <code>table</code> 元素有宽度，所以不用设置宽度）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.child&#123;</div><div class="line">  display: table;</div><div class="line">  margin: 0 auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%205.39.53%20PM.png" alt=""></p>
+<p>优点：只设置了子元素，兼容性 IE8 以上。</p>
+<p>兼容性解决：需要更改 HTML 结构，换成 <code>table</code> 结构。</p>
+<h3 id="absolute-transform"><a href="#absolute-transform" class="headerlink" title="absolute + transform"></a>absolute + transform</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>设置 <code>position: absolute;</code> 属性，它的特点是宽度也是由内容决定的。</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%205.35.22%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>设置 <code>.child</code> 的 <code>left: 50%;</code> 子元素左边元会到中间。效果如下：</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.02.15%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>transform: translateX(-50%);</code>表示往左偏移自身宽度的一半。效果如下：</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%205.39.53%20PM.png" alt=""></p>
+<p>优点：因为绝对定位元素脱离文档流，所以它不会对其它元素产生影响。</p>
+<p>缺点：兼容性不好，IE6、IE7、IE8 不支持。</p>
+<h3 id="flex-justify-content"><a href="#flex-justify-content" class="headerlink" title="flex + justify-content"></a>flex + justify-content</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>父元素设置 <code>display: flex;</code> 子元素成为为 <code>flex item</code>，子元素默认宽度变为 <code>auto</code>。效果如下：</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%205.35.22%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">justify-content</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%205.39.53%20PM.png" alt=""></p>
+<p>优点：只需要设置父元素（也可以设置子元素 <code>margin: 0 auto;</code>，效果一样。）</p>
+<p>缺点：兼容性不好，IE6、IE7、IE8 不支持。</p>
+<h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%2062004%20PM.jpg" alt=""></p>
+<h3 id="table-cell-vertical-align"><a href="#table-cell-vertical-align" class="headerlink" title="table-cell + vertical-align"></a>table-cell + vertical-align</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.24.10%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">display</span>: table-cell;</div><div class="line">  <span class="attribute">verical-align</span>: middle;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>设置父元素，让它变为一个单元格，再增加 <code>verical-align: middle;</code> 属性。效果如下：</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.27.53%20PM.png" alt=""></p>
+<p>优点：兼容性比较好（IE8 以上，兼容性解决：把 HTML 结构换为表结构）。</p>
+<h3 id="absolute-transform-1"><a href="#absolute-transform-1" class="headerlink" title="absolute + transform"></a>absolute + transform</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.31.27%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.27.53%20PM.png" alt=""></p>
+<p>优点：子元素不会干扰其它元素。</p>
+<p>缺点：兼容性不好。</p>
+<h3 id="flex-align-items"><a href="#flex-align-items" class="headerlink" title="flex + align-items"></a>flex + align-items</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.34.58%20PM.png" alt=""></p>
+<p>子元素会充满整个容器，因为子元素 <code>flex item</code> 默认属性是 <code>stretch</code> 拉伸的，所以会充满整个容器。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">align-items</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.27.53%20PM.png" alt=""></p>
+<p>优点：只设置父元素。</p>
+<p>缺点：兼容性不好。</p>
+<h2 id="居中"><a href="#居中" class="headerlink" title="居中"></a>居中</h2><p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%2064048%20PM.jpg" alt=""></p>
+<h3 id="inline-block-text-align-table-cell-vertical-align"><a href="#inline-block-text-align-table-cell-vertical-align" class="headerlink" title="inline-block + text-align + table-cell + vertical-align"></a>inline-block + text-align + table-cell + vertical-align</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.45.08%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span> &#123;</div><div class="line"></div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.child</span> &#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.47.15%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span> &#123;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">  <span class="attribute">display</span>: table-cell;</div><div class="line">  <span class="attribute">vertical-align</span>: middle;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.child</span> &#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.48.37%20PM.png" alt=""></p>
+<p>优点：兼容性好</p>
+<h3 id="absolute-transform-2"><a href="#absolute-transform-2" class="headerlink" title="absolute + transform"></a>absolute + transform</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.50.54%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.51.43%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%,-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.48.37%20PM.png" alt=""></p>
+<p>优点：子元素不会对其它元素产生影响。</p>
+<p>缺点：兼容性问题。</p>
+<h3 id="flex-justify-content-align-items"><a href="#flex-justify-content-align-items" class="headerlink" title="flex + justify-content + align-items"></a>flex + justify-content + align-items</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span>DEMO<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.55.29%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">justify-content</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.56.14%20PM.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">justify-content</span>: center;</div><div class="line">  <span class="attribute">align-items</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%206.48.37%20PM.png" alt=""></p>
+<p>优点：只设置父元素。</p>
+<p>缺点：兼容性问题。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;水平居中&quot;&gt;&lt;a href=&quot;#水平居中&quot; class=&quot;headerlink&quot; title=&quot;水平居中&quot;&gt;&lt;/a&gt;水平居中&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://oeryvxt85.bkt.clouddn.com/2017-02-09-Screen%20Shot%202017-02-09%20at%2052448%20PM.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;inline-block-text-align&quot;&gt;&lt;a href=&quot;#inline-block-text-align&quot; class=&quot;headerlink&quot; title=&quot;inline-block + text-align&quot;&gt;&lt;/a&gt;inline-block + text-align&lt;/h3&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;parent&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;child&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;DEMO&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="tech" scheme="http://yoursite.com/categories/tech/"/>
+    
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>代码风格指南（Node.js）</title>
+    <link href="http://yoursite.com/2016/10/22/node-style-guide/"/>
+    <id>http://yoursite.com/2016/10/22/node-style-guide/</id>
+    <published>2016-10-22T12:27:41.000Z</published>
+    <updated>2017-02-10T06:43:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="2空格缩进"><a href="#2空格缩进" class="headerlink" title="2空格缩进"></a>2空格缩进</h2><p>使用2个空格而不是 tab 来进行代码缩进，同时绝对不要混用空格和 tab 。</p>
+<p>Sublime Text 2 设置(perfernces &gt; Settings - User)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&quot;tab_size&quot;: 2,</div><div class="line">&quot;translate_tabs_to_spaces&quot;: true</div></pre></td></tr></table></figure>
+<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>使用 UNIX 风格的换行符 (<code>\n</code>)，同时在每个文件的结尾添加一个换行符。 Windows 风格的换行符 (<code>\r\n</code>) 是绝对禁止出现在任何项目中的。</p>
+<p>Sublime Text 2 设置(perfernces &gt; Settings - User)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;default_line_ending&quot;: &quot;unix&quot;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="去除行末尾的多余空格"><a href="#去除行末尾的多余空格" class="headerlink" title="去除行末尾的多余空格"></a>去除行末尾的多余空格</h2><p>就像吃完饭要刷牙一样，在提交 (commit) 代码之前你需要清理掉所有的不必要的空格。</p>
+<p>Sublime Text2 设置(perfernces &gt; Settings - User)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;trim_trailing_white_space_on_save&quot;: true</div></pre></td></tr></table></figure>
+<h2 id="使用分号"><a href="#使用分号" class="headerlink" title="使用分号"></a>使用分号</h2><p>是否使用分号，在社区争论已久。 isaac 也写过一篇讨论的<a href="http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding" target="_blank" rel="external">文章</a>， 但是，当可以用廉价的语法来消除一些可能引入的错误的时候，请当一个保守派。</p>
+<h2 id="每行80个字符"><a href="#每行80个字符" class="headerlink" title="每行80个字符"></a>每行80个字符</h2><p>限制你每行代码不超过80个字符。尽管现在的显示器越来越大，但是你的大脑并没有变大，并且你还可以把你的大显示器切分成多屏来显示。</p>
+<p>Sublime Text 2 设置(perfernces &gt; Settings - User)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;rulers&quot;: [80]</div></pre></td></tr></table></figure>
+<p>多屏：<code>view &gt; Layout &gt; Columns 2</code></p>
+<h2 id="使用单引号"><a href="#使用单引号" class="headerlink" title="使用单引号"></a>使用单引号</h2><p>除非编写.json文件，其他时候都请用单引号包裹字符串。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var foo = &apos;bar&apos;;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var foo = &quot;bar&quot;;</div></pre></td></tr></table></figure>
+<h2 id="大括号位置"><a href="#大括号位置" class="headerlink" title="大括号位置"></a>大括号位置</h2><p>请把你的所有的左大括号都放在语句开始的这一行。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (true) &#123;</div><div class="line">  console.log(&apos;winning&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if (true)</div><div class="line">&#123;</div><div class="line">  console.log(&apos;losing&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>同时，请注意在条件判断前后都添加一个空格。</p>
+<h2 id="每个变量声明都带一个-var"><a href="#每个变量声明都带一个-var" class="headerlink" title="每个变量声明都带一个 var"></a>每个变量声明都带一个 var</h2><p>每个变量声明都带一个 var ，这样删除或者调整变量声明的顺序会更加容易。 不要把变量都声明在最前面，而是声明在它最有意义的地方。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var keys   = [&apos;foo&apos;, &apos;bar&apos;];</div><div class="line">var values = [23, 42];</div><div class="line"></div><div class="line">var object = &#123;&#125;;</div><div class="line">while (items.length) &#123;</div><div class="line">  var key = keys.pop();</div><div class="line">  object[key] = values.pop();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var keys = [&apos;foo&apos;, &apos;bar&apos;],</div><div class="line">    values = [23, 42],</div><div class="line">    object = &#123;&#125;,</div><div class="line">    key;</div><div class="line"></div><div class="line">while (items.length) &#123;</div><div class="line">  key = keys.pop();</div><div class="line">  object[key] = values.pop();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="变量、属性和函数名都采用小驼峰"><a href="#变量、属性和函数名都采用小驼峰" class="headerlink" title="变量、属性和函数名都采用小驼峰"></a>变量、属性和函数名都采用小驼峰</h2><p>变量、属性和函数的命名风格都需要遵循小驼峰风格。 同时所有的命名都是有意义的。 尽量避免用单字符变量和少见单词来命名。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var adminUser = db.query(&apos;SELECT * FROM users ...&apos;);</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var admin_user = db.query(&apos;SELECT * FROM users ...&apos;);</div><div class="line">var a = db.query(&apos;SELECT * FROM users ...&apos;);</div></pre></td></tr></table></figure>
+<h2 id="类名采用大驼峰"><a href="#类名采用大驼峰" class="headerlink" title="类名采用大驼峰"></a>类名采用大驼峰</h2><p>类名都采用大驼峰风格来命名。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function BankAccount() &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function bank_Account() &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="用大写来标识常量"><a href="#用大写来标识常量" class="headerlink" title="用大写来标识常量"></a>用大写来标识常量</h2><p>常量变量和对象的静态常量属性都需要特殊表明，通过全部大写的方式来表明。</p>
+<p>尽管 Node.js / V8 支持 mozilla 的 const 关键字， 但是不幸的是，对象的属性并不支持这个关键字，而且 const 没有包含于任何一个 ECMA 规范中。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var SECOND = 1 * 1000;</div><div class="line"></div><div class="line">function File() &#123;</div><div class="line">&#125;</div><div class="line">File.FULL_PERMISSIONS = 0777;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const SECOND = 1 * 1000;</div><div class="line"></div><div class="line">function File() &#123;</div><div class="line">&#125;</div><div class="line">File.fullPermissions = 0777;</div></pre></td></tr></table></figure>
+<h2 id="对象、数组的创建"><a href="#对象、数组的创建" class="headerlink" title="对象、数组的创建"></a>对象、数组的创建</h2><p>使用尾随逗号，尽量用一行来声明，只有在编译器不接受的情况下才把对象的 key 用单引号包裹。 使用字面表达式，用<code>{}, []</code>代替 <code>new Array, new Object</code>。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;hello&apos;, &apos;world&apos;];</div><div class="line">var b = &#123;</div><div class="line">  good: &apos;code&apos;,</div><div class="line">  &apos;is generally&apos;: &apos;pretty&apos;,</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var a = [</div><div class="line">  &apos;hello&apos;, &apos;world&apos;</div><div class="line">];</div><div class="line">var b = &#123;&quot;good&quot;: &apos;code&apos;</div><div class="line">        , is generally: &apos;pretty&apos;</div><div class="line">        &#125;;</div></pre></td></tr></table></figure>
+<h2 id="使用-比较符"><a href="#使用-比较符" class="headerlink" title="使用 === 比较符"></a>使用 === 比较符</h2><p>写代码并不是在背这些 <a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators" target="_blank" rel="external">stupid rules</a> 。使用 === 操作符来进行比较操作，它会完全按照你的期望来执行。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = 0;</div><div class="line">if (a === &apos;&apos;) &#123;</div><div class="line">  console.log(&apos;winning&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = 0;</div><div class="line">if (a == &apos;&apos;) &#123;</div><div class="line">  console.log(&apos;losing&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="三元操作符分多行"><a href="#三元操作符分多行" class="headerlink" title="三元操作符分多行"></a>三元操作符分多行</h2><p>三元操作符不应该写在一行，将它分割到多行。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var foo = (a === b)</div><div class="line">  ? 1</div><div class="line">  : 2;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var foo = (a === b) ? 1 : 2;</div></pre></td></tr></table></figure>
+<h2 id="不要扩展内建类型"><a href="#不要扩展内建类型" class="headerlink" title="不要扩展内建类型"></a>不要扩展内建类型</h2><p>不要扩展 javascript 内建对象的方法。将来的你会感谢你这个做法的。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = [];</div><div class="line">if (!a.length) &#123;</div><div class="line">  console.log(&apos;winning&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Array.prototype.empty = function() &#123;</div><div class="line">  return !this.length;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var a = [];</div><div class="line">if (a.empty()) &#123;</div><div class="line">  console.log(&apos;losing&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="使用有意义的判断条件"><a href="#使用有意义的判断条件" class="headerlink" title="使用有意义的判断条件"></a>使用有意义的判断条件</h2><p>所有复杂的条件判断都需要赋予一个有意义的名字或者方法。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var isValidPassword = password.length &gt;= 4 &amp;&amp; /^(?=.*\d).&#123;4,&#125;$/.test(password);</div><div class="line"></div><div class="line">if (isValidPassword) &#123;</div><div class="line">  console.log(&apos;winning&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (password.length &gt;= 4 &amp;&amp; /^(?=.*\d).&#123;4,&#125;$/.test(password)) &#123;</div><div class="line">  console.log(&apos;losing&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="写精简的函数"><a href="#写精简的函数" class="headerlink" title="写精简的函数"></a>写精简的函数</h2><p>保持你的函数尽可能的精简。 一个好的函数应该能够在幻灯片上一屏显示，并且让坐在教室最后一排的人看清楚。 别再去数你的每一个函数并控制在15行以内了。</p>
+<h2 id="尽早的从函数中返回"><a href="#尽早的从函数中返回" class="headerlink" title="尽早的从函数中返回"></a>尽早的从函数中返回</h2><p>为了避免深入嵌套的 if 语句，请尽早的从函数中返回。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function isPercentage(val) &#123;</div><div class="line">  if (val &lt; 0) &#123;</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  if (val &gt; 100) &#123;</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return true;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function isPercentage(val) &#123;</div><div class="line">  if (val &gt;= 0) &#123;</div><div class="line">    if (val &lt; 100) &#123;</div><div class="line">      return true;</div><div class="line">    &#125; else &#123;</div><div class="line">      return false;</div><div class="line">    &#125;</div><div class="line">  &#125; else &#123;</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>针对这个示例，甚至可以进一步精简优化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function isPercentage(val) &#123;</div><div class="line">  var isInRange = (val &gt;= 0 &amp;&amp; val &lt;= 100);</div><div class="line">  return isInRange;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="给你的闭包命名"><a href="#给你的闭包命名" class="headerlink" title="给你的闭包命名"></a>给你的闭包命名</h2><p>请尽量给你的闭包、匿名函数命名。 这让人知道你在意这个函数，更重要的是，这将会产生可读性更好的堆栈跟踪和CPU调用信息等。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">req.on(&apos;end&apos;, function onEnd() &#123;</div><div class="line">  console.log(&apos;winning&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">req.on(&apos;end&apos;, function() &#123;</div><div class="line">  console.log(&apos;losing&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="不要嵌套闭包"><a href="#不要嵌套闭包" class="headerlink" title="不要嵌套闭包"></a>不要嵌套闭包</h2><p>使用闭包，但是不要嵌套他们，否则你的代码将会一团糟。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">setTimeout(function() &#123;</div><div class="line">  client.connect(afterConnect);</div><div class="line">&#125;, 1000);</div><div class="line"></div><div class="line">function afterConnect() &#123;</div><div class="line">  console.log(&apos;winning&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setTimeout(function() &#123;</div><div class="line">  client.connect(function() &#123;</div><div class="line">    console.log(&apos;losing&apos;);</div><div class="line">  &#125;);</div><div class="line">&#125;, 1000);</div></pre></td></tr></table></figure>
+<h2 id="使用单行注释风格"><a href="#使用单行注释风格" class="headerlink" title="使用单行注释风格"></a>使用单行注释风格</h2><p>不管是单行注释还是多行注释，都使用 <code>//</code> 。 同时请尝试在更高层次来编写注释（解释函数整体的思路）， 只在解释一些难以理解代码的时候添加注释，而不是给一些琐碎的东西加上注释。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// &apos;ID_SOMETHING=VALUE&apos; -&gt; [&apos;ID_SOMETHING=VALUE&apos;&apos;, &apos;SOMETHING&apos;, &apos;VALUE&apos;]</div><div class="line">var matches = item.match(/ID_([^\n]+)=([^\n]+)/));</div><div class="line"></div><div class="line">// This function has a nasty side effect where a failure to increment a</div><div class="line">// redis counter used for statistics will cause an exception. This needs</div><div class="line">// to be fixed in a later iteration.</div><div class="line">function loadUser(id, cb) &#123;</div><div class="line">  // ...</div><div class="line">&#125;</div><div class="line"></div><div class="line">var isSessionValid = (session.expires &lt; Date.now());</div><div class="line">if (isSessionValid) &#123;</div><div class="line">  // ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// Execute a regex</div><div class="line">var matches = item.match(/ID_([^\n]+)=([^\n]+)/));</div><div class="line"></div><div class="line">// Usage: loadUser(5, function() &#123; ... &#125;)</div><div class="line">function loadUser(id, cb) &#123;</div><div class="line">  // ...</div><div class="line">&#125;</div><div class="line"></div><div class="line">// Check if the session is valid</div><div class="line">var isSessionValid = (session.expires &lt; Date.now());</div><div class="line">// If the session is valid</div><div class="line">if (isSessionValid) &#123;</div><div class="line">  // ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Object-freeze-Object-preventExtensions-Object-seal-with-eval"><a href="#Object-freeze-Object-preventExtensions-Object-seal-with-eval" class="headerlink" title="Object.freeze, Object.preventExtensions, Object.seal, with, eval"></a>Object.freeze, Object.preventExtensions, Object.seal, with, eval</h2><p>这一堆屎一样的东西，你永远都不会需要他们。</p>
+<h2 id="Getters-和-Setters"><a href="#Getters-和-Setters" class="headerlink" title="Getters 和 Setters"></a>Getters 和 Setters</h2><p>不要使用 setters ，他们会引发一些使用你的代码的人无法解决的问题。 当没有<a href="http://en.wikipedia.org/wiki/Side_effect_(computer_science" target="_blank" rel="external">副作用</a>)的时候，可以使用 getters，例如提供一个集合类的长度属性的时候。</p>
+<h2 id="异步回调函数"><a href="#异步回调函数" class="headerlink" title="异步回调函数"></a>异步回调函数</h2><p>Node 的异步回调函数的第一个参数应该是错误指示，只有这样才能够享受许多流程控制模块的福利。</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">function cb(err, data , ...) &#123;...&#125;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">function cb(data, ...) &#123;...&#125;</div></pre></td></tr></table></figure>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>尽管有许多的方法来实现继承，但是最为推荐的是 Node 的标准写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function Socket(options) &#123;</div><div class="line">  // ...</div><div class="line">  stream.Stream.call(this);</div><div class="line">  // ...</div><div class="line">&#125;</div><div class="line"></div><div class="line">util.inherits(Socket, stream.Stream);</div></pre></td></tr></table></figure>
+<h2 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h2><p>单词之间使用 <code>_</code> underscore 来分割，如果你不想暴露某个文件给用户，你也可以用 _ 来开头</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">child_process.js</div><div class="line">string_decoder.js</div><div class="line">_linklist.js</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">childProcess.js</div><div class="line">stringDecoder.js</div></pre></td></tr></table></figure>
+<h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p>在所有的操作符前后都添加空格，<code>function</code> 关键字后面添加空格</p>
+<p>Right:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var add = function (a, b) &#123;</div><div class="line">  return a + b;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>Wrong:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var add=function(a,b)&#123;</div><div class="line">  return a+b;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="入乡随俗"><a href="#入乡随俗" class="headerlink" title="入乡随俗"></a>入乡随俗</h2><p>给别人的项目提交 pull request 的时候，要注意遵循项目的编码规范，保持项目编码风格的统一。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;2空格缩进&quot;&gt;&lt;a href=&quot;#2空格缩进&quot; class=&quot;headerlink&quot; title=&quot;2空格缩进&quot;&gt;&lt;/a&gt;2空格缩进&lt;/h2&gt;&lt;p&gt;使用2个空格而不是 tab 来进行代码缩进，同时绝对不要混用空格和 tab 。&lt;/p&gt;
+&lt;p&gt;Sublime Text 2 设置(perfernces &amp;gt; Settings - User)：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;quot;tab_size&amp;quot;: 2,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;quot;translate_tabs_to_spaces&amp;quot;: true&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;换行&quot;&gt;&lt;a href=&quot;#换行&quot; class=&quot;headerlink&quot; title=&quot;换行&quot;&gt;&lt;/a&gt;换行&lt;/h2&gt;&lt;p&gt;使用 UNIX 风格的换行符 (&lt;code&gt;\n&lt;/code&gt;)，同时在每个文件的结尾添加一个换行符。 Windows 风格的换行符 (&lt;code&gt;\r\n&lt;/code&gt;) 是绝对禁止出现在任何项目中的。&lt;/p&gt;
+&lt;p&gt;Sublime Text 2 设置(perfernces &amp;gt; Settings - User)：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;quot;default_line_ending&amp;quot;: &amp;quot;unix&amp;quot;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="tech" scheme="http://yoursite.com/categories/tech/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>中文技术文档的写作规范（下）</title>
+    <link href="http://yoursite.com/2016/10/21/document-style-guide3/"/>
+    <id>http://yoursite.com/2016/10/21/document-style-guide3/</id>
+    <published>2016-10-21T13:03:11.000Z</published>
+    <updated>2017-02-10T06:43:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="标点符号"><a href="#标点符号" class="headerlink" title="标点符号"></a>标点符号</h2><h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h3><ul>
+<li>中文语句的标点符号，均应该采取全角符号，这样可以保证视觉的一致。</li>
+<li>如果整句为英文，则该句使用英文/半角标点。</li>
+<li>句号、问号、叹号、逗号、顿号、分号和冒号不得出现在一行之首。</li>
+</ul>
+<h3 id="句号"><a href="#句号" class="headerlink" title="句号"></a>句号</h3><p>中文语句中的结尾处应该用全角句号（<code>。</code>）。</p>
+<p>句子末尾用括号加注时，句号应在括号之外。</p>
+<p><code>错误：关于文件的输出，请参照第 1.3 节（见第 26 页。）</code><br><code>正确：关于文件的输出，请参照第 1.3 节（见第 26 页）。</code></p>
+<h3 id="逗号"><a href="#逗号" class="headerlink" title="逗号"></a>逗号</h3><p>逗号<code>，</code>表示句子内部的一般性停顿。</p>
+<p>注意避免“一逗到底”，即整个段落除了结尾，全部停顿都使用逗号。</p>
+<a id="more"></a>
+<h3 id="顿号"><a href="#顿号" class="headerlink" title="顿号"></a>顿号</h3><p>句子内部的并列词，应该用全角顿号(<code>、</code>) 分隔，而不用逗号，即使并列词是英语也是如此。</p>
+<p><code>错误：我最欣赏的科技公司有 Google, Facebook, 腾讯, 阿里和百度等。</code><br><code>正确：我最欣赏的科技公司有 Google、Facebook、腾讯、阿里和百度等。</code></p>
+<p>英文句子中，并列词语之间使用半角逗号（<code>,</code>）分隔。</p>
+<p><code>例句：Microsoft Office includes Word, Excel, PowerPoint, Outlook and other components.</code></p>
+<h3 id="分号"><a href="#分号" class="headerlink" title="分号"></a>分号</h3><p>分号<code>；</code>表示复句内部并列分句之间的停顿。</p>
+<h3 id="引号"><a href="#引号" class="headerlink" title="引号"></a>引号</h3><p>引用时，应该使用全角双引号（<code>“ ”</code>），注意前后双引号不同。</p>
+<p><code>例句：许多人都认为客户服务的核心是“友好”和“专业”。</code></p>
+<p>引号里面还要用引号时，外面一层用双引号，里面一层用单引号（<code>‘ ’</code>），注意前后单引号不同。</p>
+<p><code>例句：鲍勃解释道：“我要放音乐，可萨利说，‘不行！’。”</code></p>
+<h3 id="圆括号"><a href="#圆括号" class="headerlink" title="圆括号"></a>圆括号</h3><p>补充说明时，使用全角圆括号<code>（）</code>，括号前后不加空格。</p>
+<p><code>例句：请确认所有的连接（电缆和接插件）均安装牢固。</code></p>
+<h3 id="冒号"><a href="#冒号" class="headerlink" title="冒号"></a>冒号</h3><p>全角冒号（<code>：</code>）常用在需要解释的词语后边，引出解释和说明。</p>
+<p><code>例句：请确认以下几项内容：时间、地点、活动名称，以及来宾数量。</code></p>
+<p>表示时间时，应使用半角冒号（<code>:</code>）。</p>
+<p><code>例句：早上 8:00</code></p>
+<h3 id="省略号"><a href="#省略号" class="headerlink" title="省略号"></a>省略号</h3><p>省略号<code>……</code>表示语句未完、或者语气的不连续。它占两个汉字空间、包含六个省略点，不要使用<code>。。。</code>或<code>...</code>等非标准形式。</p>
+<p>省略号不应与“等”这个词一起使用。</p>
+<p><code>错误：我们为会餐准备了香蕉、苹果、梨…等各色水果。</code></p>
+<p><code>正确：我们为会餐准备了各色水果，有香蕉、苹果、梨……</code></p>
+<p><code>正确：我们为会餐准备了香蕉、苹果、梨等各色水果。</code></p>
+<h3 id="感叹号"><a href="#感叹号" class="headerlink" title="感叹号"></a>感叹号</h3><p>应该使用平静的语气叙述，尽量避免使用感叹号<code>！</code>。</p>
+<p>不得多个感叹号连用，比如<code>！！</code>和<code>!!!</code>。</p>
+<h3 id="破折号"><a href="#破折号" class="headerlink" title="破折号"></a>破折号</h3><p>破折号<code>————</code>一般用于做进一步解释。破折号应占两个汉字的位置。</p>
+<p><code>例句：直觉————尽管它并不总是可靠的————告诉我，这事可能出了些问题。</code></p>
+<h3 id="连接号"><a href="#连接号" class="headerlink" title="连接号"></a>连接号</h3><p>连接号用于连接两个类似的词。</p>
+<p>以下场合应该使用直线连接号（<code>-</code>），占一个半角字符的位置。</p>
+<ul>
+<li>两个名词的复合</li>
+<li>图表编号</li>
+</ul>
+<p><code>例句：氧化-还原反应</code></p>
+<p><code>例句：图 1-1</code></p>
+<p>以下场合应该使用波浪连接号（<code>～</code>），占一个全角字符的位置。</p>
+<ul>
+<li>数值范围（例如日期、时间或数字）</li>
+</ul>
+<p><code>例句：2009 年～2011 年</code></p>
+<p>注意，波浪连接号前后两个值都应该加上单位。</p>
+<p>波浪连接号也可以用汉字“至”代替。</p>
+<p><code>例句：周围温度：-20°C 至 -10°C</code></p>
+<h2 id="章节结构"><a href="#章节结构" class="headerlink" title="章节结构"></a>章节结构</h2><p>软件手册是一部完整的书，建议采用下面的结构。</p>
+<ul>
+<li>简介（Introduction）： [必备] [文件] 提供对产品和文档本身的总体的、扼要的说明</li>
+<li>快速上手（Getting Started）：[可选] [文件] 如何最快速地使用产品</li>
+<li>入门篇（Basics）： [必备] [目录] 又称”使用篇“，提供初级的使用教程<ul>
+<li>环境准备（Prerequisite）：[必备] [文件] 软件使用需要满足的前置条件</li>
+<li>安装（Installation）：[可选] [文件] 软件的安装方法</li>
+<li>设置（Configuration）：[必备] [文件] 软件的设置</li>
+</ul>
+</li>
+<li>进阶篇（Advanced)：[可选] [目录] 又称”开发篇“，提供中高级的开发教程</li>
+<li>API（Reference）：[可选] [目录|文件] 软件API的逐一介绍</li>
+<li>FAQ：[可选] [文件] 常见问题解答</li>
+<li>附录（Appendix）：[可选] [目录] 不属于教程本身、但对阅读教程有帮助的内容<ul>
+<li>Glossary：[可选] [文件] 名词解释</li>
+<li>Recipes：[可选] [文件] 最佳实践</li>
+<li>Troubleshooting：[可选] [文件] 故障处理</li>
+<li>ChangeLog：[可选] [文件] 版本说明</li>
+<li>Feedback：[可选] [文件] 反馈方式</li>
+</ul>
+</li>
+</ul>
+<h3 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h3><ul>
+<li><a href="http://redux.js.org/index.html" target="_blank" rel="external">Redux 手册</a></li>
+<li><a href="http://flight-manual.atom.io/" target="_blank" rel="external">Atom 手册</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;标点符号&quot;&gt;&lt;a href=&quot;#标点符号&quot; class=&quot;headerlink&quot; title=&quot;标点符号&quot;&gt;&lt;/a&gt;标点符号&lt;/h2&gt;&lt;h3 id=&quot;原则&quot;&gt;&lt;a href=&quot;#原则&quot; class=&quot;headerlink&quot; title=&quot;原则&quot;&gt;&lt;/a&gt;原则&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;中文语句的标点符号，均应该采取全角符号，这样可以保证视觉的一致。&lt;/li&gt;
+&lt;li&gt;如果整句为英文，则该句使用英文/半角标点。&lt;/li&gt;
+&lt;li&gt;句号、问号、叹号、逗号、顿号、分号和冒号不得出现在一行之首。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;句号&quot;&gt;&lt;a href=&quot;#句号&quot; class=&quot;headerlink&quot; title=&quot;句号&quot;&gt;&lt;/a&gt;句号&lt;/h3&gt;&lt;p&gt;中文语句中的结尾处应该用全角句号（&lt;code&gt;。&lt;/code&gt;）。&lt;/p&gt;
+&lt;p&gt;句子末尾用括号加注时，句号应在括号之外。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;错误：关于文件的输出，请参照第 1.3 节（见第 26 页。）&lt;/code&gt;&lt;br&gt;&lt;code&gt;正确：关于文件的输出，请参照第 1.3 节（见第 26 页）。&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;逗号&quot;&gt;&lt;a href=&quot;#逗号&quot; class=&quot;headerlink&quot; title=&quot;逗号&quot;&gt;&lt;/a&gt;逗号&lt;/h3&gt;&lt;p&gt;逗号&lt;code&gt;，&lt;/code&gt;表示句子内部的一般性停顿。&lt;/p&gt;
+&lt;p&gt;注意避免“一逗到底”，即整个段落除了结尾，全部停顿都使用逗号。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="tech" scheme="http://yoursite.com/categories/tech/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>中文技术文档的写作规范（中）</title>
+    <link href="http://yoursite.com/2016/10/20/document-style-guide2/"/>
+    <id>http://yoursite.com/2016/10/20/document-style-guide2/</id>
+    <published>2016-10-20T13:59:21.000Z</published>
+    <updated>2017-02-10T06:43:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h3><ul>
+<li>一个段落只能有一个主题，或一个中心句子。</li>
+<li>段落的中心句子放在段首，对全段内容进行概述。后面陈述的句子为核心句服务。</li>
+<li>一个段落的长度不能超过七行，最佳段落长度小于等于四行。</li>
+<li>段落的句子语气要使用陈述和肯定语气，避免使用感叹语气。</li>
+<li>段落之间使用一个空行隔开。</li>
+<li>段落开头不要留出空白字符。</li>
+</ul>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>引用第三方内容时，应注明出处。</p>
+<p><code>One man’s constant is another man’s variable. — Alan Perlis</code></p>
+<p>如果是全篇转载，请在全文开头显著位置注明作者和出处，并链接至原文。</p>
+<p><code>本文转载自 WikiQuote</code></p>
+<p>使用外部图片时，必须在图片下方或文末标明来源。</p>
+<p><code>本文部分图片来自 Wikipedia</code></p>
+<a id="more"></a>
+<h2 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h2><h3 id="半角数字"><a href="#半角数字" class="headerlink" title="半角数字"></a>半角数字</h3><p>数字一律使用半角形式，不得使用全角形式。</p>
+<p><code>错误： 这件商品的价格是１０００元。</code></p>
+<p><code>正确： 这件商品的价格是 1000 元。</code></p>
+<h3 id="千分号"><a href="#千分号" class="headerlink" title="千分号"></a>千分号</h3><p>数值为千位以上，应添加千分号（半角逗号）。</p>
+<p><code>XXX 公司的实收资本为 RMB1,258,000。</code></p>
+<p>对于 4 ～ 6 位的数值，千分号是选用的，比如<code>1000</code>和<code>1,000</code>都可以接受。对于7位及以上的数值，千分号是必须的。</p>
+<p>多位小数要从小数点后从左向右添加千分号，比如<code>4.234,345</code>。</p>
+<h3 id="货币"><a href="#货币" class="headerlink" title="货币"></a>货币</h3><p>货币应为阿拉伯数字，并在数字前写出货币符号，或在数字后写出货币中文名称。</p>
+<p><code>$1,000</code><br><code>1,000 美元</code></p>
+<h3 id="数值范围"><a href="#数值范围" class="headerlink" title="数值范围"></a>数值范围</h3><p>表示数值范围时，用～连接。参见《标点符号》一节的“连接号”部分。</p>
+<p>带有单位或百分号时，两个数字都要加上单位或百分号，不能只加后面一个。</p>
+<p><code>正确：132kg～234kg</code><br><code>错误：132～234kg</code></p>
+<p><code>正确：67%～89%</code><br><code>错误：67～89%</code></p>
+<h3 id="变化程度的表示法"><a href="#变化程度的表示法" class="headerlink" title="变化程度的表示法"></a>变化程度的表示法</h3><p>数字的增加要使用“增加了”、“增加到”。“了”表示增量，“到”表示定量。</p>
+<p><code>增加到过去的两倍</code><br><code>（过去为一，现在为二）</code></p>
+<p><code>增加了两倍</code><br><code>（过去为一，现在为三）</code></p>
+<p>数字的减少要使用“降低了”、“降低到”。“了”表示增量，“到”表示定量。</p>
+<p><code>降低到百分之八十</code><br><code>（定额是一百，现在是八十）</code></p>
+<p><code>降低了百分之八十</code><br><code>（原来是一百，现在是二十）</code></p>
+<p>不能用“降低N倍”或“减少N倍”的表示法，要用“降低百分之几”或“减少百分之几”。因为减少（或降低）一倍表示数值原来为一百，现在等于零。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;段落&quot;&gt;&lt;a href=&quot;#段落&quot; class=&quot;headerlink&quot; title=&quot;段落&quot;&gt;&lt;/a&gt;段落&lt;/h2&gt;&lt;h3 id=&quot;原则&quot;&gt;&lt;a href=&quot;#原则&quot; class=&quot;headerlink&quot; title=&quot;原则&quot;&gt;&lt;/a&gt;原则&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;一个段落只能有一个主题，或一个中心句子。&lt;/li&gt;
+&lt;li&gt;段落的中心句子放在段首，对全段内容进行概述。后面陈述的句子为核心句服务。&lt;/li&gt;
+&lt;li&gt;一个段落的长度不能超过七行，最佳段落长度小于等于四行。&lt;/li&gt;
+&lt;li&gt;段落的句子语气要使用陈述和肯定语气，避免使用感叹语气。&lt;/li&gt;
+&lt;li&gt;段落之间使用一个空行隔开。&lt;/li&gt;
+&lt;li&gt;段落开头不要留出空白字符。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;引用&quot;&gt;&lt;a href=&quot;#引用&quot; class=&quot;headerlink&quot; title=&quot;引用&quot;&gt;&lt;/a&gt;引用&lt;/h3&gt;&lt;p&gt;引用第三方内容时，应注明出处。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;One man’s constant is another man’s variable. — Alan Perlis&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如果是全篇转载，请在全文开头显著位置注明作者和出处，并链接至原文。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;本文转载自 WikiQuote&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;使用外部图片时，必须在图片下方或文末标明来源。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;本文部分图片来自 Wikipedia&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="tech" scheme="http://yoursite.com/categories/tech/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>中文技术文档的写作规范（上）</title>
+    <link href="http://yoursite.com/2016/10/19/document-style-guide/"/>
+    <id>http://yoursite.com/2016/10/19/document-style-guide/</id>
+    <published>2016-10-19T14:52:40.000Z</published>
+    <updated>2017-02-10T06:44:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h3 id="层级"><a href="#层级" class="headerlink" title="层级"></a>层级</h3><p>标题分为四级。</p>
+<ul>
+<li>一级标题：文章的标题</li>
+<li>二级标题：文章主要部分的大标题</li>
+<li>三级标题：二级标题下面一级的小标题</li>
+<li>四级标题：三级标题下面某一方面的小标题</li>
+</ul>
+<h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h3><ul>
+<li>一级标题下，不能直接出现三级标题。</li>
+<li>标题要避免孤立编号（即同级标题只有一个）。</li>
+<li>下级标题不重复上一级标题的内容。</li>
+<li>谨慎使用四级标题，尽量避免出现，保持层级的简单和防止出现过于复杂的章节。如果三级标题下有并列性的内容，建议只使用项目列表（Item list）。</li>
+</ul>
+<a id="more"></a>
+<h2 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h2><h3 id="字间距"><a href="#字间距" class="headerlink" title="字间距"></a>字间距</h3><p>全角中文字符与半角英文字符之间，应有一个半角空格。</p>
+<p><code>错误：本文介绍如何快速启动Windows系统。</code></p>
+<p><code>正确：本文介绍如何快速启动 Windows 系统。</code></p>
+<p>全角中文字符与半角阿拉伯数字之间，建议有一个半角空格。</p>
+<p><code>不推荐：2011年5月15日，我订购了5台笔记本电脑与10台平板电脑。</code></p>
+<p><code>推荐：2011 年 5 月 15 日，我订购了 5 台笔记本电脑与 10 台平板电脑。</code></p>
+<p>半角的百分号，视同阿拉伯数字。</p>
+<p>英文单位若不翻译，单位前的阿拉伯数字与单位间不留空格。</p>
+<p><code>错误：一部容量为 16 GB 的智能手机</code></p>
+<p><code>正确：一部容量为 16GB 的智能手机</code></p>
+<p>半角英文字符和半角阿拉伯数字，与全角标点符号之间不留空格。</p>
+<p><code>错误：他的电话号码是 13899912345 。</code></p>
+<p><code>正确：他的电话号码是 13899912345。</code></p>
+<h3 id="句子"><a href="#句子" class="headerlink" title="句子"></a>句子</h3><ul>
+<li>句子要避免使用长句。一个句子建议不超过 100 字（正文 3 行）。</li>
+<li>句子要使用简单句和并列句，避免使用复合句。</li>
+</ul>
+<h3 id="写作风格"><a href="#写作风格" class="headerlink" title="写作风格"></a>写作风格</h3><p>如果使用了被动语态，应考虑更改为主动语态。</p>
+<p><code>错误：假如此软件尚未被安装，</code></p>
+<p><code>正确：假如尚未安装这个软件，</code></p>
+<p>不使用非正式的语言风格。</p>
+<p><code>错误：Lady Gaga 的演唱会真是酷毙了，从没看过这么给力的表演！！！</code></p>
+<p><code>正确：无法参加本次活动，我深感遗憾。</code></p>
+<p>用对“的”、“地”、“得”。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">她露出了开心的笑容。</div><div class="line">（形容词＋的＋名词）</div><div class="line"></div><div class="line">她开心地笑了。</div><div class="line">（副词＋地＋动词）</div><div class="line"></div><div class="line">她笑得很开心。</div><div class="line">（动词＋得＋副词）</div></pre></td></tr></table></figure>
+<p>使用代词时（比如“其”、“该”、“此”、“这”等词），必须明确指代的内容，保证只有一个含义。</p>
+<p><code>错误：从管理系统可以监视中继系统和受其直接控制的分配系统。</code></p>
+<p><code>正确：从管理系统可以监视两个系统：中继系统和受中继系统直接控制的分配系统。</code></p>
+<p>名词前不要使用过多的形式词。</p>
+<p><code>错误：此设备的使用必须在接受过本公司举办的正式的设备培训的技师的指导下进行。</code></p>
+<p><code>正确：此设备必须在技师的指导下使用，且指导技师必须接受过由本公司举办的正式设备培训。</code></p>
+<p>句子的长度尽量保持在20个字以内；20～29个字的句子，可以接受；39～39个字的句子，语义必须明确，才能接受；多于40个字的句子，在任何情况下都不能接受。</p>
+<p><code>错误：本产品适用于从由一台服务器进行动作控制的单一节点结构到由多台服务器进行动作控制的并行处理程序结构等多种体系结构。</code></p>
+<p><code>正确：本产品适用于多种体系结构。无论是由一台服务器（单一节点结构），还是由多台服务器（并行处理结构）进行动作控制，均可以使用本产品。</code></p>
+<p>同样一个意思，尽量使用肯定句表达，不使用否定句表达。</p>
+<p><code>错误：请确认没有接通装置的电源。</code></p>
+<p><code>正确：请确认装置的电源已关闭。</code></p>
+<p>避免使用双重否定句。</p>
+<p><code>错误：没有删除权限的用户，不能删除此文件。</code></p>
+<p><code>正确：用户必须拥有删除权限，才能删除此文件。</code></p>
+<h3 id="英文处理"><a href="#英文处理" class="headerlink" title="英文处理"></a>英文处理</h3><p>英文原文如果使用了复数形式，翻译成中文时，应该将其还原为单数形式。</p>
+<p><code>⋯information stored in random access memory (RAMs)⋯</code></p>
+<p><code>应译为“……存储在随机存取存储器（RAM）里的信息……”。</code></p>
+<p>外文缩写可以使用半角圆点(.)表示缩写。</p>
+<p><code>U.S.A.</code></p>
+<p><code>Apple, Inc.</code></p>
+<p>表示中文时，英文省略号（⋯）应改为中文省略号（……）。</p>
+<p><code>5 minutes later⋯.</code></p>
+<p><code>应译为“5 分钟过去了⋯⋯”</code></p>
+<p>英文书名或电影名改用中文表达时，双引号应改为直角引号。</p>
+<p><code>He published an article entitled &quot;The Future of the Aviation&quot;</code></p>
+<p><code>应译为“他发表了一篇名为「航空业的未来」的文章”</code></p>
+<p>第一次出现英文词汇时，在括号中给出中文标注。此后再次出现时，直接使用英文缩写即可。</p>
+<p><code>IOC（International Olympic Committee，国际奥林匹克委员会）。这样定义后，便可以直接使用“IOC”了。</code></p>
+<p>专有名词中每个词第一个字母均应大写，非专有名词则不需要大写。</p>
+<p><code>“American Association of Physicists in Medicine”（美国医学物理学家协会）是专有名词，需要大写。</code></p>
+<p><code>“online transaction processing”（在线事务处理）不是专有名词，则不应大写。</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h2&gt;&lt;h3 id=&quot;层级&quot;&gt;&lt;a href=&quot;#层级&quot; class=&quot;headerlink&quot; title=&quot;层级&quot;&gt;&lt;/a&gt;层级&lt;/h3&gt;&lt;p&gt;标题分为四级。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一级标题：文章的标题&lt;/li&gt;
+&lt;li&gt;二级标题：文章主要部分的大标题&lt;/li&gt;
+&lt;li&gt;三级标题：二级标题下面一级的小标题&lt;/li&gt;
+&lt;li&gt;四级标题：三级标题下面某一方面的小标题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;原则&quot;&gt;&lt;a href=&quot;#原则&quot; class=&quot;headerlink&quot; title=&quot;原则&quot;&gt;&lt;/a&gt;原则&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;一级标题下，不能直接出现三级标题。&lt;/li&gt;
+&lt;li&gt;标题要避免孤立编号（即同级标题只有一个）。&lt;/li&gt;
+&lt;li&gt;下级标题不重复上一级标题的内容。&lt;/li&gt;
+&lt;li&gt;谨慎使用四级标题，尽量避免出现，保持层级的简单和防止出现过于复杂的章节。如果三级标题下有并列性的内容，建议只使用项目列表（Item list）。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="tech" scheme="http://yoursite.com/categories/tech/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Oh My Zsh 简易安装指南</title>
+    <link href="http://yoursite.com/2016/10/18/zsh-install/"/>
+    <id>http://yoursite.com/2016/10/18/zsh-install/</id>
+    <published>2016-10-18T14:20:02.000Z</published>
+    <updated>2017-02-10T06:43:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>查看系统有几种 shell<br><code>cat /etc/shells</code></p>
+<p>显示如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/bin/bash</div><div class="line">/bin/csh</div><div class="line">/bin/ksh</div><div class="line">/bin/sh</div><div class="line">/bin/tcsh</div><div class="line">/bin/zsh</div></pre></td></tr></table></figure>
+<p>Mac 默认会预装了个 zsh</p>
+<p>安装zsh（非 Mac 用户）<br>Redhat Linux，执行：<code>sudo yum install zsh</code><br>Ubuntu Linux，执行：<code>sudo apt-get install zsh</code></p>
+<a id="more"></a>
+<h2 id="开始安装-Oh-My-Zsh"><a href="#开始安装-Oh-My-Zsh" class="headerlink" title="开始安装 Oh My Zsh"></a>开始安装 Oh My Zsh</h2><p>自动安装：<br><code>wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</code></p>
+<p>手动安装：<br><figure class="highlight plain"><figcaption><span>clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</div></pre></td></tr></table></figure></p>
+<p>配置:<br>oh my zsh 在安装时已经自动读取当前的环境变量并进行了设置，你可以继续追加其他环境变量。</p>
+<p>手动安装完以后可以把当前的PATH变量设置到~/.zshrc中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo &quot;export PATH=$PATH&quot; &gt;&gt; ~/.zshrc</div><div class="line">source ~/.zshrc</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前期准备&quot;&gt;&lt;a href=&quot;#前期准备&quot; class=&quot;headerlink&quot; title=&quot;前期准备&quot;&gt;&lt;/a&gt;前期准备&lt;/h2&gt;&lt;p&gt;查看系统有几种 shell&lt;br&gt;&lt;code&gt;cat /etc/shells&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;显示如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;/bin/bash&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/bin/csh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/bin/ksh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/bin/sh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/bin/tcsh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/bin/zsh&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Mac 默认会预装了个 zsh&lt;/p&gt;
+&lt;p&gt;安装zsh（非 Mac 用户）&lt;br&gt;Redhat Linux，执行：&lt;code&gt;sudo yum install zsh&lt;/code&gt;&lt;br&gt;Ubuntu Linux，执行：&lt;code&gt;sudo apt-get install zsh&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="tech" scheme="http://yoursite.com/categories/tech/"/>
+    
+    
+      <category term="Oh My Zsh" scheme="http://yoursite.com/tags/Oh-My-Zsh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HEXO 搭建个人博客简易入门指南</title>
+    <link href="http://yoursite.com/2016/10/09/hexo-install/"/>
+    <id>http://yoursite.com/2016/10/09/hexo-install/</id>
+    <published>2016-10-09T13:18:03.000Z</published>
+    <updated>2017-02-10T06:44:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>此文针对 Mac 环境搭建</p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><ul>
+<li><p>前期准备</p>
+<ul>
+<li>安装Node</li>
+<li>安装Git</li>
+<li>申请GitHub</li>
+</ul>
+</li>
+<li><p>正式安装HEXO　</p>
+</li>
+</ul>
+<p>打开命令行工具执行如下安装命令：<br><code>$ sudo npm install -g hexo</code></p>
+<ul>
+<li>初始化</li>
+</ul>
+<p><code>$ hexo init blog</code> 创建并初始化一个 blog 文件夹</p>
+<ul>
+<li>生成静态页面</li>
+</ul>
+<p><code>$ cd blog</code> 进入创建好的文件夹</p>
+<p><code>$ hexo generate （hexo g  也可以）</code> 生成静态页面</p>
+<ul>
+<li>本地启动</li>
+</ul>
+<p>启动本地服务，进行文章预览调试，命令：</p>
+<p><code>$ hexo server</code></p>
+<p>浏览器输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>,进行预览。</p>
+<a id="more"></a>
+<h2 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h2><ul>
+<li>创建Repository</li>
+</ul>
+<p>例：<br>project name：ClarenceNeo.github.io</p>
+<p>注：Github Pages的Repository名字是特定的，比如我Github账号是ClarenceNeo，那么我Github Pages Repository名字就是ClarenceNeo.github.io。</p>
+<ul>
+<li>建立关联</li>
+</ul>
+<p>现在我们需要修改 blog 目录中的 _config.yml 文件，用 vim 编辑器，命令如下：</p>
+<p><code>$ vim _config.yml</code></p>
+<p>翻到最下面，更改为如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: https://github.com/ClarenceNeo/ClarenceNeo.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>注意：<code>: 后面用空格</code></p>
+<p>执行如下命令使用git部署:</p>
+<p><code>$ npm install hexo-deployer-git --save</code></p>
+<p>最后执行配置命令：</p>
+<p><code>$ hexo deploy</code></p>
+<p>然后再浏览器中输入<a href="https://clarenceneo.github.io" target="_blank" rel="external">https://clarenceneo.github.io</a>就行了，我的github的账户叫ClarenceNeo,把这个改成你github的账户名就行了。</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>每次部署的步骤，可按以下三步来进行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>常用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new &quot;postName&quot; #新建文章</div><div class="line">$ hexo new page &quot;pageName&quot; #新建页面</div><div class="line">$ hexo generate #生成静态页面至public目录</div><div class="line">$ hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</div><div class="line">$ hexo deploy #将.deploy目录部署到GitHub</div><div class="line">$ hexo help  # 查看帮助</div><div class="line">$ hexo version  #查看Hexo的版本</div></pre></td></tr></table></figure>
+<p>常用简写:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo n == hexo new</div><div class="line">$ hexo g == hexo generate</div><div class="line">$ hexo s == hexo server</div><div class="line">$ hexo d == hexo deploy</div></pre></td></tr></table></figure>
+<p>常用组合:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo d -g #生成部署</div><div class="line">$ hexo s -g #生成预览</div></pre></td></tr></table></figure>
+<p>主题：</p>
+<p>可以参照这个<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">主题列表</a>。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;此文针对 Mac 环境搭建&lt;/p&gt;
+&lt;h2 id=&quot;配置环境&quot;&gt;&lt;a href=&quot;#配置环境&quot; class=&quot;headerlink&quot; title=&quot;配置环境&quot;&gt;&lt;/a&gt;配置环境&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;前期准备&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装Node&lt;/li&gt;
+&lt;li&gt;安装Git&lt;/li&gt;
+&lt;li&gt;申请GitHub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;正式安装HEXO　&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;打开命令行工具执行如下安装命令：&lt;br&gt;&lt;code&gt;$ sudo npm install -g hexo&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;初始化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;$ hexo init blog&lt;/code&gt; 创建并初始化一个 blog 文件夹&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;生成静态页面&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;$ cd blog&lt;/code&gt; 进入创建好的文件夹&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ hexo generate （hexo g  也可以）&lt;/code&gt; 生成静态页面&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本地启动&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;启动本地服务，进行文章预览调试，命令：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ hexo server&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;浏览器输入&lt;a href=&quot;http://localhost:4000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000&lt;/a&gt;,进行预览。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="tech" scheme="http://yoursite.com/categories/tech/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello Hexo</title>
+    <link href="http://yoursite.com/2016/10/07/hello-Hexo/"/>
+    <id>http://yoursite.com/2016/10/07/hello-Hexo/</id>
+    <published>2016-10-07T12:51:04.000Z</published>
+    <updated>2016-10-07T14:26:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>一直在寻找一个写作的平台，再尝试了各种博客平台（Medium，简书，LOFTER等），也自建过 WordPress 之后，发现始终离自己理想的博客平台存在差距，直到遇见 Hexo。它是在我现有技术水平下可以让我尽可能的掌控自己网站的一种方式，现在开始我要把它作为主力写作平台了。</p>
+<p>就从这篇开始吧！！！</p>
+<p>Hello Hexo.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一直在寻找一个写作的平台，再尝试了各种博客平台（Medium，简书，LOFTER等），也自建过 WordPress 之后，发现始终离自己理想的博客平台存在差距，直到遇见 Hexo。它是在我现有技术水平下可以让我尽可能的掌控自己网站的一种方式，现在开始我要把它作为主力写作平台
+    
+    </summary>
+    
+      <category term="essay" scheme="http://yoursite.com/categories/essay/"/>
     
     
   </entry>
