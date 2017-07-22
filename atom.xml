@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-22T01:33:48.000Z</updated>
+  <updated>2017-07-22T02:30:48.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,111 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HTML 知识点（二）</title>
+    <link href="http://yoursite.com/2017/07/22/HTML-%E7%9F%A5%E8%AF%86%E7%82%B92/"/>
+    <id>http://yoursite.com/2017/07/22/HTML-知识点2/</id>
+    <published>2017-07-22T02:02:59.000Z</published>
+    <updated>2017-07-22T02:30:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-07-22-HTML-2.png" alt=""></p>
+<a id="more"></a>
+<h2 id="文档章节标签"><a href="#文档章节标签" class="headerlink" title="文档章节标签"></a>文档章节标签</h2><ul>
+<li>body（页面容器标签）</li>
+<li>header（页面头部）</li>
+<li>nav（导航栏）</li>
+<li>aside（侧边栏）</li>
+<li>article（独立可重复内容）</li>
+<li>section（文档中的一节）</li>
+<li>footer（页面尾部）</li>
+<li>hx（标题标签）</li>
+</ul>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/Screen%20Shot%202016-10-15%20at%2011.17.50%20AM.png" alt=""></p>
+<h2 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h2><h4 id="a-标签"><a href="#a-标签" class="headerlink" title="a 标签"></a>a 标签</h4><p>创建指向另一个文档的链接</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://tech.163.com/"</span>&gt;</span>科技<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://ent.163.com/movie/"</span> <span class="attr">taget</span>=<span class="string">"_self"</span>&gt;</span>电影<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://money.163.com/"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>财经<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>创建一个文档内部的锚点</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#pay"</span>&gt;</span>下单支付<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"pay"</span>&gt;</span>下单支付...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>链接到 email 地址等</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"mailto:niuzhiyuan94@gmail.com"</span>&gt;</span>联系我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"tel:12345678901"</span>&gt;</span>12345678901<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="文本强调标签"><a href="#文本强调标签" class="headerlink" title="文本强调标签"></a>文本强调标签</h4><ul>
+<li>em 语义上的强调</li>
+<li>strong 重要性的强调<blockquote>
+<p>strong &gt; em</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="行内容器标签"><a href="#行内容器标签" class="headerlink" title="行内容器标签"></a>行内容器标签</h4><ul>
+<li>span 标签</li>
+</ul>
+<h4 id="换行标签"><a href="#换行标签" class="headerlink" title="换行标签"></a>换行标签</h4><ul>
+<li>br 标签</li>
+</ul>
+<h4 id="引用标签"><a href="#引用标签" class="headerlink" title="引用标签"></a>引用标签</h4><ul>
+<li>cite 引用出处（如作品名称，人物）</li>
+<li>q 作品中的一段文字（如某人说的一段话）</li>
+</ul>
+<h4 id="代码标签"><a href="#代码标签" class="headerlink" title="代码标签"></a>代码标签</h4><ul>
+<li>code 标签</li>
+</ul>
+<h4 id="格式化标签（非强调性质）"><a href="#格式化标签（非强调性质）" class="headerlink" title="格式化标签（非强调性质）"></a>格式化标签（非强调性质）</h4><ul>
+<li>b 粗体</li>
+<li>i 斜体</li>
+</ul>
+<h2 id="组合内容标签"><a href="#组合内容标签" class="headerlink" title="组合内容标签"></a>组合内容标签</h2><h4 id="分区标签-div"><a href="#分区标签-div" class="headerlink" title="分区标签 div"></a>分区标签 div</h4><ul>
+<li>用于功能区分区，作为其它标签的容器</li>
+</ul>
+<h4 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h4><ul>
+<li>p 标签</li>
+</ul>
+<h4 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h4><ul>
+<li>无序列表 ul</li>
+<li>有序列表 ol<blockquote>
+<p>可以通过type属性控制样式，如：<br><code>&lt;ol type=&quot;a&quot; start=&quot;2&quot;&gt;</code>就是从 b 开始排列</p>
+</blockquote>
+</li>
+<li>自定义列表 dl</li>
+<li>pre（已经格式化的内容）</li>
+<li>blockquote （大段的引用）可以设置 cite 属性，引用的出处</li>
+</ul>
+<h2 id="嵌入资源标签"><a href="#嵌入资源标签" class="headerlink" title="嵌入资源标签"></a>嵌入资源标签</h2><h4 id="img"><a href="#img" class="headerlink" title="img"></a>img</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"img"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">".../cover.jpg"</span> <span class="attr">alt</span>=<span class="string">"封面"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>alt：描述图片含义，在图片加载失败后显示</p>
+<h4 id="iframe-嵌入页面"><a href="#iframe-嵌入页面" class="headerlink" title="iframe 嵌入页面"></a>iframe 嵌入页面</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"http://www.163.com"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="object-embed-嵌入外部资源"><a href="#object-embed-嵌入外部资源" class="headerlink" title="object,embed 嵌入外部资源"></a>object,embed 嵌入外部资源</h4><ul>
+<li><p>objece</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--插件类型--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">object</span> <span class="attr">type</span>=<span class="string">"application/x-shockwave-flash"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--插件参数--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"movie"</span> <span class="attr">value</span>=<span class="string">"http://pdfReader.swf"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"flashvars"</span> <span class="attr">value</span>=<span class="string">"http://book.pdf"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">object</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>  另一种写法（IE8 以下不支持）：</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">object</span> <span class="attr">data</span>=<span class="string">"http://pdfReader.swf"</span> <span class="attr">type</span>=<span class="string">"application/x-shockwave-flash"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"flashvars"</span> <span class="attr">value</span>=<span class="string">"http://book.pdf"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">object</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>embed</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">embed</span> <span class="attr">type</span>=<span class="string">"application/x-shockwave-flash"</span> <span class="attr">src</span>=<span class="string">"http://pdfReader.swf"</span> <span class="attr">width</span>=<span class="string">"640"</span> <span class="attr">height</span>=<span class="string">"480"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="video"><a href="#video" class="headerlink" title="video"></a>video</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--controls 控制播放器控制条，poster 插入视频封面（autoplay 属性自动播放，loop 循环播放）--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span>=<span class="string">"controls"</span> <span class="attr">poster</span>=<span class="string">"/img/poster.jpg"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"movie.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"movie.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"movie.ogg"</span> <span class="attr">type</span>=<span class="string">"video/ogg"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--引入视频字幕--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">track</span> <span class="attr">kind</span>=<span class="string">"subtitles"</span> <span class="attr">src</span>=<span class="string">"video.srt"</span> <span class="attr">label</span>=<span class="string">"English"</span>&gt;</span></div><div class="line">  您的浏览器不支持 video 标签。</div></pre></td></tr></table></figure>
+<h4 id="audio"><a href="#audio" class="headerlink" title="audio"></a>audio</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"someaudio.wav"</span> <span class="attr">type</span>=<span class="string">"audio/wav"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"someaudio.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mp3"</span>&gt;</span></div><div class="line">  您的浏览器不支持 audio 标签。</div><div class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="其他图片标签"><a href="#其他图片标签" class="headerlink" title="其他图片标签"></a>其他图片标签</h4><ul>
+<li>canvas(基于像素，适用于性能要求比较高的，场景比较复杂的，比如实时数据的展示、游戏等。)</li>
+<li>svg（矢量，适用于高保真）</li>
+</ul>
+<h4 id="热点区域"><a href="#热点区域" class="headerlink" title="热点区域"></a>热点区域</h4><ul>
+<li>map</li>
+<li>area</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://oeryvxt85.bkt.clouddn.com/2017-07-22-HTML-2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>HTML 知识点（一）</title>
     <link href="http://yoursite.com/2017/07/22/HTML-%E7%9F%A5%E8%AF%86%E7%82%B91/"/>
     <id>http://yoursite.com/2017/07/22/HTML-知识点1/</id>
     <published>2017-07-22T01:29:51.000Z</published>
-    <updated>2017-07-22T01:33:48.000Z</updated>
+    <updated>2017-07-22T02:06:02.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="HTML-简介"><a href="#HTML-简介" class="headerlink" title="HTML 简介"></a>HTML 简介</h2><h4 id="什么是-HTML"><a href="#什么是-HTML" class="headerlink" title="什么是 HTML"></a>什么是 HTML</h4><p>HTML 是英文 Hyper Text Markup Language (超文本标记语言)的缩写。</p>
 <h4 id="HTML-文档"><a href="#HTML-文档" class="headerlink" title="HTML 文档"></a>HTML 文档</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--文档声明--&gt;</span></div><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--文档头部--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"音乐..."</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"网易..."</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>网易云音乐 听见好时光<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--文档主体--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">iframe</span>&gt;</span>...<span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"g-btmbar"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -344,14 +444,13 @@
     <link href="http://yoursite.com/2017/02/19/gitbook-1/"/>
     <id>http://yoursite.com/2017/02/19/gitbook-1/</id>
     <published>2017-02-19T06:54:57.000Z</published>
-    <updated>2017-06-26T18:54:59.000Z</updated>
+    <updated>2017-07-22T02:15:31.000Z</updated>
     
-    <content type="html"><![CDATA[<p>最近尝试用 GitBook 发布笔记，但是在创建的时候发现有不少困难，网上的教程有不能完美解决（大多内容比较老），故把我的创建过程记录下来，以供参考。</p>
+    <content type="html"><![CDATA[<p>最近尝试用 GitBook 发布笔记，但是在创建的时候发现有不少困难，网上的教程有不能完美解决（大多内容比较老），故把我的创建过程记录下来，以供参考。<br><a id="more"></a></p>
 <h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ul>
 <li>申请 <a href="https://github.com/" target="_blank" rel="external">GitHub 账号</a>。</li>
 <li>申请 <a href="https://www.gitbook.com" target="_blank" rel="external">GitBook 账号</a>(可以通过 GitHub 账号登录)。</li>
 </ul>
-<a id="more"></a>
 <h2 id="新建个人仓库"><a href="#新建个人仓库" class="headerlink" title="新建个人仓库"></a>新建个人仓库</h2><h4 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h4><ol>
 <li><p>点击屏幕右上角的「+」号，选择「New repository」，如图所示：<img src="http://oeryvxt85.bkt.clouddn.com/2017-02-19-Screen%20Shot%202017-02-19%20at%201.36.34%20PM.png" alt=""></p>
 </li>
@@ -392,11 +491,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;最近尝试用 GitBook 发布笔记，但是在创建的时候发现有不少困难，网上的教程有不能完美解决（大多内容比较老），故把我的创建过程记录下来，以供参考。&lt;/p&gt;
-&lt;h2 id=&quot;前期准备&quot;&gt;&lt;a href=&quot;#前期准备&quot; class=&quot;headerlink&quot; title=&quot;前期准备&quot;&gt;&lt;/a&gt;前期准备&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;申请 &lt;a href=&quot;https://github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub 账号&lt;/a&gt;。&lt;/li&gt;
-&lt;li&gt;申请 &lt;a href=&quot;https://www.gitbook.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitBook 账号&lt;/a&gt;(可以通过 GitHub 账号登录)。&lt;/li&gt;
-&lt;/ul&gt;
+      &lt;p&gt;最近尝试用 GitBook 发布笔记，但是在创建的时候发现有不少困难，网上的教程有不能完美解决（大多内容比较老），故把我的创建过程记录下来，以供参考。&lt;br&gt;
     
     </summary>
     
@@ -526,15 +621,15 @@
     <link href="http://yoursite.com/2016/10/22/node-style-guide/"/>
     <id>http://yoursite.com/2016/10/22/node-style-guide/</id>
     <published>2016-10-22T12:27:41.000Z</published>
-    <updated>2017-02-10T06:43:12.000Z</updated>
+    <updated>2017-07-22T02:14:37.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="2空格缩进"><a href="#2空格缩进" class="headerlink" title="2空格缩进"></a>2空格缩进</h2><p>使用2个空格而不是 tab 来进行代码缩进，同时绝对不要混用空格和 tab 。</p>
 <p>Sublime Text 2 设置(perfernces &gt; Settings - User)：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&quot;tab_size&quot;: 2,</div><div class="line">&quot;translate_tabs_to_spaces&quot;: true</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>使用 UNIX 风格的换行符 (<code>\n</code>)，同时在每个文件的结尾添加一个换行符。 Windows 风格的换行符 (<code>\r\n</code>) 是绝对禁止出现在任何项目中的。</p>
 <p>Sublime Text 2 设置(perfernces &gt; Settings - User)：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;default_line_ending&quot;: &quot;unix&quot;</div></pre></td></tr></table></figure>
-<a id="more"></a>
 <h2 id="去除行末尾的多余空格"><a href="#去除行末尾的多余空格" class="headerlink" title="去除行末尾的多余空格"></a>去除行末尾的多余空格</h2><p>就像吃完饭要刷牙一样，在提交 (commit) 代码之前你需要清理掉所有的不必要的空格。</p>
 <p>Sublime Text2 设置(perfernces &gt; Settings - User)：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;trim_trailing_white_space_on_save&quot;: true</div></pre></td></tr></table></figure>
@@ -650,9 +745,6 @@
       &lt;h2 id=&quot;2空格缩进&quot;&gt;&lt;a href=&quot;#2空格缩进&quot; class=&quot;headerlink&quot; title=&quot;2空格缩进&quot;&gt;&lt;/a&gt;2空格缩进&lt;/h2&gt;&lt;p&gt;使用2个空格而不是 tab 来进行代码缩进，同时绝对不要混用空格和 tab 。&lt;/p&gt;
 &lt;p&gt;Sublime Text 2 设置(perfernces &amp;gt; Settings - User)：&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;quot;tab_size&amp;quot;: 2,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;quot;translate_tabs_to_spaces&amp;quot;: true&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;换行&quot;&gt;&lt;a href=&quot;#换行&quot; class=&quot;headerlink&quot; title=&quot;换行&quot;&gt;&lt;/a&gt;换行&lt;/h2&gt;&lt;p&gt;使用 UNIX 风格的换行符 (&lt;code&gt;\n&lt;/code&gt;)，同时在每个文件的结尾添加一个换行符。 Windows 风格的换行符 (&lt;code&gt;\r\n&lt;/code&gt;) 是绝对禁止出现在任何项目中的。&lt;/p&gt;
-&lt;p&gt;Sublime Text 2 设置(perfernces &amp;gt; Settings - User)：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;quot;default_line_ending&amp;quot;: &amp;quot;unix&amp;quot;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
