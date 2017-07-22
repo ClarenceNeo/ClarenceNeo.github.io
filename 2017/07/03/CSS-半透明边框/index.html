@@ -12,7 +12,7 @@
 <p>好消息就是，在 <code>CSS3</code> 中我们可以通过 <code>background-clip</code> 属性来调整上述默认行为所带来的不便。这个属性的初始值是 <code>border-box</code> ，意味着背景会被元素的 <code>border</code> <code>box</code> （边框的外沿框）裁切掉。如果不希望背景侵入边框所在的范围，我们要做 的就是把它的值设为 <code>padding-box</code> ，这样浏览器就会用内边距的外沿来把背景裁切掉。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box3</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid <span class="built_in">hsla</span>(0, 0%, 100%, .5);</div><div class="line">  <span class="attribute">background</span>: <span class="number">#fff</span>;</div><div class="line">  <span class="attribute">background-clip</span>: padding-box;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>从而使 <code>box3</code> 得到了半透明的边框。</p>
-</div></article></div></main><footer><div class="paginator"><a href="/2017/07/04/CSS-编码技巧1/" class="prev">上一篇</a><a href="/2017/07/02/CSS-长度单位/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'clarenceneo';
+</div></article></div></main><footer><div class="paginator"><a href="/2017/07/04/CSS-编码技巧1/" class="prev">PREV</a><a href="/2017/07/02/CSS-长度单位/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'clarenceneo';
 var disqus_identifier = '2017/07/03/CSS-半透明边框/';
 var disqus_title = '浅谈 background 与 border - 半透明边框';
 var disqus_url = 'http://yoursite.com/2017/07/03/CSS-半透明边框/';

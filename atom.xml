@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-03T19:26:15.000Z</updated>
+  <updated>2017-07-22T01:33:48.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML 知识点（一）</title>
+    <link href="http://yoursite.com/2017/07/22/HTML-%E7%9F%A5%E8%AF%86%E7%82%B91/"/>
+    <id>http://yoursite.com/2017/07/22/HTML-知识点1/</id>
+    <published>2017-07-22T01:29:51.000Z</published>
+    <updated>2017-07-22T01:33:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="HTML-简介"><a href="#HTML-简介" class="headerlink" title="HTML 简介"></a>HTML 简介</h2><h4 id="什么是-HTML"><a href="#什么是-HTML" class="headerlink" title="什么是 HTML"></a>什么是 HTML</h4><p>HTML 是英文 Hyper Text Markup Language (超文本标记语言)的缩写。</p>
+<h4 id="HTML-文档"><a href="#HTML-文档" class="headerlink" title="HTML 文档"></a>HTML 文档</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--文档声明--&gt;</span></div><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--文档头部--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"音乐..."</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"网易..."</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>网易云音乐 听见好时光<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--文档主体--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">iframe</span>&gt;</span>...<span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"g-btmbar"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="HTML-文档声明"><a href="#HTML-文档声明" class="headerlink" title="HTML 文档声明"></a>HTML 文档声明</h4><ul>
+<li><p>&lt;!doctype&gt;</p>
+<ul>
+<li>首行、顶格</li>
+<li><p>html 4.01（三种类型：严格 strict.dtd，松散 loose.dtd，框架 frameset.dtd）<br><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 //EN&quot; &quot;http://www.w3.org/TR/htm14/strict.dtd&quot;&gt;</code></p>
+</li>
+<li><p>html 5<br><code>&lt;!doctype html&gt;</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="HTML-文档头部"><a href="#HTML-文档头部" class="headerlink" title="HTML 文档头部"></a>HTML 文档头部</h4><p>描述基本属性和信息</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--字符编码，写在第一行--&gt;</span> </div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></div><div class="line">  <span class="comment">&lt;!--标题--&gt;</span> </div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>网易云音乐 听见好时光<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--文档基本信息，content 给搜索引擎提供的--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"音乐..."</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"网易..."</span> /&gt;</span></div><div class="line">  <span class="comment">&lt;!--移动端设置宽高，缩放等属性--&gt;</span> </div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--浏览器标签上的图标--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"shortcut icon"</span> <span class="attr">href</span>=<span class="string">"favicon.ico"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--css 样式的引入--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"../css/style.css"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">p&#123;color:#999;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">    </div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="HTML-语法"><a href="#HTML-语法" class="headerlink" title="HTML 语法"></a>HTML 语法</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"m-win"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"m-login"</span> <span class="attr">action</span>=<span class="string">"#"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">legend</span>&gt;</span>网易通行证登陆<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"账号"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"密码"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"u-btn"</span> <span class="attr">class</span>=<span class="string">"u-btn"</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>标签都放在 <code>&lt;&gt;</code> 里面</li>
+<li>标签都是闭合的，如<code>&lt;form&gt;</code> <code>&lt;/form&gt;</code>，自闭合<code>&lt;input &gt;</code></li>
+<li>标签可以有一个或多个属性</li>
+<li>标签可以嵌套</li>
+<li>注释格式<code>&lt;!-- --&gt;</code></li>
+</ul>
+<h4 id="常见属性"><a href="#常见属性" class="headerlink" title="常见属性"></a>常见属性</h4><ul>
+<li>id 规定元素在页面中唯一的标识</li>
+<li>class 规定元素的类名，页面中有统一的功能或样式的元素，可以用 class 标识</li>
+<li>style 规定了元素的样式</li>
+<li>title 规定了元素额外的一些信息（当鼠标移动上去显示的）</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;HTML-简介&quot;&gt;&lt;a href=&quot;#HTML-简介&quot; class=&quot;headerlink&quot; title=&quot;HTML 简介&quot;&gt;&lt;/a&gt;HTML 简介&lt;/h2&gt;&lt;h4 id=&quot;什么是-HTML&quot;&gt;&lt;a href=&quot;#什么是-HTML&quot; class=&quot;headerli
+    
+    </summary>
+    
+    
+      <category term="HTML" scheme="http://yoursite.com/tags/HTML/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS 编码技巧 （二）</title>
