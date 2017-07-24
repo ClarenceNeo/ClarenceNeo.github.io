@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-22T17:39:18.000Z</updated>
+  <updated>2017-07-24T23:53:00.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,128 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS 初体验</title>
+    <link href="http://yoursite.com/2017/07/25/CSS-%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
+    <id>http://yoursite.com/2017/07/25/CSS-初体验/</id>
+    <published>2017-07-24T23:50:19.000Z</published>
+    <updated>2017-07-24T23:53:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-07-24-html-css.jpg" alt=""></p>
+<a id="more"></a>
+<h2 id="制作-html-样板："><a href="#制作-html-样板：" class="headerlink" title="制作 html 样板："></a>制作 html 样板：</h2><ol>
+<li>设置 doctype</li>
+<li>设置页面编码</li>
+<li>引入初始化 css</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--</span></div><div class="line">HTML5. Use tags like &lt;article&gt;, &lt;section&gt;, etc.</div><div class="line">See: http://www.sitepoint.com/web-foundations/doctypes/</div><div class="line">--&gt;</div><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!--</span></div><div class="line">    Ask IE to behave like a modern browser</div><div class="line">    See: https://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible</div><div class="line">    --&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"x-ua-compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>My Site<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!--</span></div><div class="line">    Disables zooming on mobile devices.</div><div class="line">    --&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!--</span></div><div class="line">    Stylesheet that minimizes browser differences.</div><div class="line">    See: http://necolas.github.io/normalize.css/</div><div class="line">    --&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/normalize.css"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!--</span></div><div class="line">    Our own stylesheet.</div><div class="line">    --&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/main.css"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    put content here</div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="样板作用："><a href="#样板作用：" class="headerlink" title="样板作用："></a>样板作用：</h4><ul>
+<li>指定使用 HTML5 语法</li>
+<li>要求 IE 遵守现代浏览器的渲染标准</li>
+<li>锁死页面在移动设备显示宽度</li>
+<li>引入了 normalize.css, 在默认的HTML元素样式上提供了跨浏览器的高度一致性</li>
+</ul>
+<blockquote>
+<p><a href="http://jerryzou.com/posts/aboutNormalizeCss/" target="_blank" rel="external">来，让我们谈一谈 Normalize.css</a></p>
+</blockquote>
+<h2 id="Live-页面编辑"><a href="#Live-页面编辑" class="headerlink" title="Live 页面编辑"></a>Live 页面编辑</h2><p><a href="https://www.browsersync.io/" target="_blank" rel="external">BrowserSync</a> 可以实现监听你的修改，然后自动刷新页面。<br>安装 BrowserSync (依赖 NodeJS):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install browser-sync@2.7.1</div></pre></td></tr></table></figure>
+<p>然后在项目目录运行这个命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser-sync start --server --port 4000 --files index.html --files css/main.css</div></pre></td></tr></table></figure>
+<p>这样页面就会自动刷新了。</p>
+<h2 id="设置固定背景"><a href="#设置固定背景" class="headerlink" title="设置固定背景"></a>设置固定背景</h2><p>滚动页面时可以发现：</p>
+<ol>
+<li>页面的背景是固定的，不随页面的滚动而滚动</li>
+<li>同时放大和缩小窗口可以发现页面背景也会随之放大和缩小</li>
+</ol>
+<p>背景固定有两种实现方式，一种是元素 fixed，其背景不做特殊处理；另一种是背景固定，元素不做特殊处理。</p>
+<p>这里我们采用第二种实现方式，在 body 元素中使背景固定。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(../img/bg5.jpg);</div><div class="line">  <span class="attribute">background-attachment</span>: fixed;</div><div class="line">  <span class="attribute">background-size</span>: cover;</div><div class="line">  <span class="attribute">background-position</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="实现原理："><a href="#实现原理：" class="headerlink" title="实现原理："></a>实现原理：</h4><ul>
+<li>background-attachment: fixed; 使背景图不随页面的滚动而滚动</li>
+<li>background-size: cover; 使背景图始终填满整个屏幕</li>
+<li>background-position: center; 使背景图居中</li>
+</ul>
+<h2 id="居中外包围框"><a href="#居中外包围框" class="headerlink" title="居中外包围框"></a>居中外包围框</h2><h4 id="外包围框作用"><a href="#外包围框作用" class="headerlink" title="外包围框作用:"></a>外包围框作用:</h4><ul>
+<li>居中内容</li>
+<li>围框里所有 block 元素的默认宽度是充满父容器的宽度，不需要个别为每个元素设置宽度。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- element1 --&gt;</span></div><div class="line">    <span class="comment">&lt;!-- element2 --&gt;</span></div><div class="line">    <span class="comment">&lt;!-- element... --&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">960px</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="实现原理：-1"><a href="#实现原理：-1" class="headerlink" title="实现原理："></a>实现原理：</h4><ul>
+<li>width: 960px; 设置外包围框的宽度。</li>
+<li>margin: 0 auto; 让浏览器自动计算左右 margin，使外包围框居中。<ul>
+<li>这个居中技巧只限于有设置宽度的容器。</li>
+</ul>
+</li>
+</ul>
+<p>你常常会看到网页选择 960px 这个宽度，这是因为一般浏览器是 1024 宽，加上滚动条就是 1000-1004。960 给滚动条和其他浏览器 UI 预留了足够的空间。 并且 960 这个数字可以 2，3，4，5，6，8，10，12 等数字除尽，方便做网格。</p>
+<h2 id="头部容器"><a href="#头部容器" class="headerlink" title="头部容器"></a>头部容器</h2><p>HTML 元素可以简单地分为两大类。</p>
+<ol>
+<li><p>块级元素</p>
+<ul>
+<li>p, div, h1, h2, table, ol 等等</li>
+</ul>
+</li>
+<li><p>行元素</p>
+<ul>
+<li>span, img, a, button, input 等等</li>
+</ul>
+</li>
+</ol>
+<p>浏览器渲染效果：</p>
+<ul>
+<li>灰色背景是块级元素。浏览器会在块级元素前后增加断行。这些元素的默认宽度会填满父容器。</li>
+<li>红色背景是行元素，他们的宽度刚好适应内容，而且不会造成断行。</li>
+</ul>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-07-24-23694-67cefdbd0365cfca.png" alt=""></p>
+<h2 id="居中元素"><a href="#居中元素" class="headerlink" title="居中元素:"></a>居中元素:</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- This is an image, with display set to 'block' in CSS.</span></div><div class="line">     Centered by setting left/right margin.to auto.</div><div class="line">--&gt;</div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"whales.png"</span> <span class="attr">class</span>=<span class="string">"centered-image"</span>/&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"centered-container"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- All inline elements are centered in this container. --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Moby Dick<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"whales.png"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.centered-image</span> &#123;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">width</span>: <span class="number">25%</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.centered-container</span> &#123;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-07-24-23694-0414c4af19813fd3.png" alt=""></p>
+<p>实现原理：</p>
+<ul>
+<li>display: block; 把行元素变成块元素</li>
+<li>margin: 0 auto; 居中块元素<ul>
+<li>元素一定要有 width 属性</li>
+</ul>
+</li>
+<li>text-align: center; 通过容器来居中行元素</li>
+</ul>
+<p>使用 text-align 居中必须经过一个元素的父元素来居中，这会影响在这个容器里所有的元素。 在前面这个例子你可以看到不只是图片居中了, h1 和 p 里面的文字也被居中了。</p>
+<p>如果你想要居中一个行元素（比如图片），但不影响同个容器里面的其他元素，那你可以选择把它设定为块元素来居中。</p>
+<h2 id="调整元素间距"><a href="#调整元素间距" class="headerlink" title="调整元素间距"></a>调整元素间距</h2><p>我们要用 margin 来指定元素之间的间距。在这个例子我们让一个容器里的每个元素之间有 50px 的间距。元素和容器也有 50px 的间距。</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-07-24-23694-a220e30849ec80f0.png" alt=""></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'container'</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>block 1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>block 1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>block 2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#D8D8D8</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">1px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.container</span> <span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">margin-top</span>: <span class="number">50px</span>;</div><div class="line">  <span class="attribute">margin-bottom</span>: <span class="number">50px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>margin-top: 50px; 和 margin-bottom: 50px; 设定间距</li>
+<li>padding: 1px; 禁止 .container 折叠间距</li>
+</ul>
+<p>在 <code>.container</code> 上面加上的 <code>padding: 1px;</code> 有点神奇。假如我们没有加上这个 <code>padding: 1px;</code>，你会发现效果变成了这样：</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-07-24-23694-a32b619a63e6ff70.png" alt=""></p>
+<p>这是因为容器本身的 margin-top 会和第一个子元素的 margin-top 折叠在一起。在容器和 top 这个字符之间的空白其实是 子元素的 margin-top。同样的，父元素的 margin-bottom 会和最后一个子元素的 margin-bottom 也折叠一起了。</p>
+<p>有关 margin 折叠的细节和用法可以看 <a href="http://www.sitepoint.com/web-foundations/collapsing-margins/" target="_blank" rel="external">Collapsing Margins</a></p>
+<h2 id="怎样排序-CSS-属性"><a href="#怎样排序-CSS-属性" class="headerlink" title="怎样排序 CSS 属性"></a>怎样排序 CSS 属性</h2><p>具体的属性排序可以按照以下的规则：</p>
+<ul>
+<li>定位属性: position, float, z-index, clear</li>
+<li>盒模型相关属性: padding, margin, display, width, height, border</li>
+<li>字体相关</li>
+<li>CSS2 视觉相关属性 (background)</li>
+<li>CSS3 属性 (border-radius, box-shadow)</li>
+</ul>
+<p>参考 <a href="http://markdotto.com/2011/11/29/css-property-order/" target="_blank" rel="external">CSS property order - @mdo</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://oeryvxt85.bkt.clouddn.com/2017-07-24-html-css.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>HTML 知识点（三）</title>
