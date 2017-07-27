@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-24T23:53:00.000Z</updated>
+  <updated>2017-07-26T17:11:58.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BOM 基础（一）</title>
+    <link href="http://yoursite.com/2017/07/26/BOM-%E5%9F%BA%E7%A1%801/"/>
+    <id>http://yoursite.com/2017/07/26/BOM-基础1/</id>
+    <published>2017-07-26T14:59:40.000Z</published>
+    <updated>2017-07-26T17:11:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果 ECMAScript 是 JavaScript 的核心，那么 BOM（浏览器对象模型）则是在 Web 中使用 JavaScript 的核心。</p>
+<a id="more"></a>
+<h2 id="window-对象"><a href="#window-对象" class="headerlink" title="window 对象"></a>window 对象</h2><p>BOM 的核心对象是 <code>window</code>，它表示浏览器的一个实例。既是 JavaScript 访问浏览器窗口的接口，也是 ECMAScript 规定的 <code>Global</code> 对象。</p>
+<h4 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h4><p>因为 window 对象扮演者 ECMAScript 中的 <code>Global</code> 对象的角色。所以在全局作用域声明的变量、函数都会变成 <code>window</code> 对象的属性和方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> age = <span class="number">24</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayAge</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.age);</div><div class="line">&#125;</div><div class="line"></div><div class="line">alert(<span class="built_in">window</span>.age); <span class="comment">//24</span></div><div class="line">sayAge();          <span class="comment">//24</span></div><div class="line"><span class="built_in">window</span>.sayAge();   <span class="comment">//24</span></div><div class="line">alert(<span class="keyword">this</span>.age);   <span class="comment">//24 this.age 被映射到 window.age</span></div></pre></td></tr></table></figure>
+<p>区别：<br>全局变量不能通过 <code>delete</code> 操作符删除，<code>window</code> 对象上定义的属性可以。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> age = <span class="number">24</span>;</div><div class="line"><span class="built_in">window</span>.color = <span class="string">"red"</span>;</div><div class="line"></div><div class="line"><span class="comment">// 在 IE &lt; 9 时抛出错误，其它浏览器返回 false</span></div><div class="line"><span class="keyword">delete</span> <span class="built_in">window</span>.age;</div><div class="line"></div><div class="line"><span class="comment">// 在 IE &lt; 9 时抛出错误，其它浏览器返回 ture</span></div><div class="line"><span class="keyword">delete</span> <span class="built_in">window</span>.color; <span class="comment">//returns true</span></div><div class="line"></div><div class="line">alert(<span class="built_in">window</span>.age);   <span class="comment">//24</span></div><div class="line">alert(<span class="built_in">window</span>.color); <span class="comment">//undefined</span></div></pre></td></tr></table></figure>
+<h4 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h4><p>如果页面中包含框架，那么每个框架都拥有自己的 <code>window</code> 对象，并保存在 <code>frames</code> 集合中。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;title&gt;Frameset Example&lt;/title&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  &lt;frameset rows=<span class="string">"160,*"</span>&gt;</div><div class="line">    &lt;frame src="frame.htm" name="topFrame"&gt;</div><div class="line">    &lt;frameset cols="50%, 50%"&gt;</div><div class="line">      &lt;frame src="anotherframe.htm" name="leftFrame"&gt;</div><div class="line">      &lt;frame src="yetanotherframe.htm" name="rightFrame"&gt;</div><div class="line">    &lt;/frameset&gt;</div><div class="line">  &lt;/frameset&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>可以使用如下图的方法引用：</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-07-26-Screen%20Shot%202017-07-26%20at%2010.20.14%20PM.png" alt=""></p>
+<p>尽量使用 <code>top</code> 而非 <code>window</code> 来引用这些框架。因为 <code>top</code> 属性永远指向最高层框架，即浏览器窗口。</p>
+<h4 id="窗口位置"><a href="#窗口位置" class="headerlink" title="窗口位置"></a>窗口位置</h4><p>因为不同浏览器窗口位置属性不统一，可以使用以下代码实现跨浏览器支持：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> leftPos = (<span class="keyword">typeof</span> <span class="built_in">window</span>.screenLeft == <span class="string">"number"</span>)? <span class="built_in">window</span>.screenLeft : <span class="built_in">window</span>.screenX;</div><div class="line"><span class="keyword">var</span> rightPos = (<span class="keyword">typeof</span> <span class="built_in">window</span>.screenTop == <span class="string">"number"</span>)? <span class="built_in">window</span>.screenTop : <span class="built_in">window</span>.screenY;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：在 IE、Opera 中，<code>screenLeft</code> 和 <code>screenTop</code> 中保存的是从屏幕左边和上边到由 <code>window</code> 对象表示的页面可见区域到距离（可能会加上工具栏的高度）。而 Chrome、Firefox 和 Safari 中，<code>screenY</code> 或 <code>screenTop</code> 中保存的是整个窗口相对于屏幕的坐标。</p>
+</blockquote>
+<p>通过 <code>moveTo()</code> 和 <code>moveBy()</code> 方法可以将窗口精确的移动到一个新位置，接收两个参数。</p>
+<p><code>moveTo()</code> 接收新位置 <code>x</code> 和 <code>y</code> 的坐标；<br><code>moveBy()</code> 接收水平垂直方向移动的像素数。</p>
+<blockquote>
+<p>注意：Opera 和 IE7+ 默认禁用这两个方法。而且只能对最外层 <code>window</code> 对象使用。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果 ECMAScript 是 JavaScript 的核心，那么 BOM（浏览器对象模型）则是在 Web 中使用 JavaScript 的核心。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>CSS 初体验</title>
