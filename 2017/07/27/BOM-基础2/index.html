@@ -1,0 +1,57 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> BOM 基础（二） · Clarence</title><meta name="description" content="BOM 基础（二） - Clarence Neo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Clarence"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/clarenceneo" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/ClarenceNeo" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">BOM 基础（二）</h1><div class="post-info">Jul 27, 2017</div><div class="post-content"><h2 id="window-对象"><a href="#window-对象" class="headerlink" title="window 对象"></a>window 对象</h2><h4 id="页面视口大小"><a href="#页面视口大小" class="headerlink" title="页面视口大小"></a>页面视口大小</h4><p>IE、Firefox、Safari、Opera 和 Chrome 中，可以通过<code>document.documentElement.clientWidth</code> 和 <code>document.documentElement.clentHeight</code> 确定页面窗口信息。IE 6 中必须在标准模式下才生效，如果是混杂模式，则通过 <code>document.body.clientWidth</code> 和 <code>document.body.clentHeight</code> 这种方法取得相同信息。</p>
+<h4 id="导航和打开窗口"><a href="#导航和打开窗口" class="headerlink" title="导航和打开窗口"></a>导航和打开窗口</h4><p>window.open() 方法可以导航到一个 URL 也可以打开一个新的浏览器窗口。</p>
+<p>参数：要加载的 URL、窗口目标、一个特性字符串以及一个表示新页面是否取代浏览器历史记录中当前加载页面的布尔值。</p>
+<h4 id="间歇调用与超时调用"><a href="#间歇调用与超时调用" class="headerlink" title="间歇调用与超时调用"></a>间歇调用与超时调用</h4><p>超时调用：在指定时间后调用代码；<br>间歇调用：每隔一段时间执行代码；</p>
+<ul>
+<li>超时调用方法：setTimeout()<br>参数：要执行的代码、以毫秒表示的时间</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">setTimeout (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(<span class="string">"Hello world!"</span>);</div><div class="line">&#125;, <span class="number">1000</span>);</div></pre></td></tr></table></figure>
+<p>setTimeout() 方法会返回一个数值 ID 表示超时调用。可以使用 clearTimeout() 方法取消。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 设置超时</span></div><div class="line"><span class="keyword">var</span> timeoutId = setTimeout (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(<span class="string">"Hello world!"</span>);</div><div class="line">&#125;, <span class="number">1000</span>);</div><div class="line"></div><div class="line"><span class="comment">// 取消超时</span></div><div class="line">clearTimeout(timeoutId);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>超时调用代码都是在全局作用域中执行的，因此函数中 this 的值在非严格模式下指向 window 对象，在非严格模式下是 undefined</p>
+</blockquote>
+<ul>
+<li>间歇调用方法 setInterval()</li>
+</ul>
+<p>参数、调用方式与超时调用相同。取消间歇调用方法为 clearInterval()，取消调用很重要否则间歇调用方法会一直执行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> intervalId = <span class="literal">null</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">incrementNumber</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	num++;</div><div class="line">	</div><div class="line">	<span class="keyword">if</span>(num == max)&#123;</div><div class="line">		clearInterval(intervalId);</div><div class="line">		alert(<span class="string">"Done"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">intervalId = setInterval(incrementNumber, <span class="number">500</span>);</div></pre></td></tr></table></figure>
+<p>同时也可以用超时调用实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">incrementNumber</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  num++;</div><div class="line">  </div><div class="line">  <span class="keyword">if</span>(num &lt; max)&#123;</div><div class="line">    setTimeout(incrementNumber, <span class="number">500</span>);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    alert(<span class="string">"Done"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">setTimeout(incrementNumber, <span class="number">500</span>);</div></pre></td></tr></table></figure>
+<p>使用超时调用模拟间歇调用是一种最佳实践，尽量使用超时调用。</p>
+<h4 id="系统对话框"><a href="#系统对话框" class="headerlink" title="系统对话框"></a>系统对话框</h4><p>方法：</p>
+<ul>
+<li><code>alert()</code> 警示对话框</li>
+<li><code>confirm()</code> 确认对话框</li>
+<li><code>prompt()</code> 提示输入对话框</li>
+</ul>
+<h2 id="location-对象"><a href="#location-对象" class="headerlink" title="location 对象"></a>location 对象</h2><p>location 提供了当前窗口加载的文档有关的信息。即是 window 对象属性，也是 document 对象的属性。</p>
+<p><img src="http://oeryvxt85.bkt.clouddn.com/2017-07-26-Screen%20Shot%202017-07-27%20at%2012.47.03%20AM.png" alt=""></p>
+<h2 id="navigator-对象"><a href="#navigator-对象" class="headerlink" title="navigator 对象"></a>navigator 对象</h2><p>navigator 对象的属性通常用于检测显示网页的浏览器类型。</p>
+<h2 id="screen-对象"><a href="#screen-对象" class="headerlink" title="screen 对象"></a>screen 对象</h2><p>screen 对象基本上只用来表明客户端的信息，其中包括浏览器窗口外部的显示器的信息，如像素宽度和高度等。</p>
+<h2 id="history-对象"><a href="#history-对象" class="headerlink" title="history 对象"></a>history 对象</h2><p>history 对象保存着用户上网的历史记录，从窗口被打开的那一刻算起。</p>
+<ul>
+<li>使用 <code>go()</code> 方法可以在用户的历史记录中任意跳转，可以向后也可以向前。只接受一个参数，正整数向前跳转，负整数向后跳转。</li>
+<li>可以给 <code>go()</code> 方法传递一个字符串参数，此时浏览器会跳转到历史记录中包含该字符串的最近位置——可能后退，也可能前进，具体要看哪个位置最近。</li>
+<li>可以使用两个简写方法 <code>back()</code> 和 <code>forward()</code>来代替 <code>go()</code>,相当于前进后退按钮。</li>
+<li>length 属性，保存着历史记录的数量。</li>
+</ul>
+<h2 id="客户端检测"><a href="#客户端检测" class="headerlink" title="客户端检测"></a>客户端检测</h2><h4 id="能力检测"><a href="#能力检测" class="headerlink" title="能力检测"></a>能力检测</h4><p>最常用也最为人们广泛接受的客户端检测形式是能力检测（又称特性检测）。注重浏览器是否支持特定的能力。</p>
+<ul>
+<li>先检测最常用的特性可以保证代码最优化</li>
+<li>必须测试实际要用到的特性</li>
+</ul>
+<p><em>更可靠的能力检测</em></p>
+<p>检测某个属性是否存在并不能确定对象是否支持某个方法，更好的方式是检测某个方法是不是一个函数，同时尽量使用 typeof 进行能力检测。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 检查 sort 是不是函数 </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isSortable</span>(<span class="params">object</span>)</span>&#123; <span class="keyword">return</span> <span class="keyword">typeof</span> object.sort == <span class="string">"function"</span>; &#125;</div></pre></td></tr></table></figure>
+<h4 id="怪癖检测"><a href="#怪癖检测" class="headerlink" title="怪癖检测"></a>怪癖检测</h4><p>怪癖检测（quirks detection）的目标是识别浏览器的特殊行为。一般来说，“怪癖”都是个别浏览器所独有的，而且通常被归为 bug。</p>
+<h4 id="用户代理检测"><a href="#用户代理检测" class="headerlink" title="用户代理检测"></a>用户代理检测</h4><p>用户代理检测通过检测用户代理字符串来确定实际使用的浏览器。该字符串可以通过 JavaScript 的 <code>navigator.userAgent</code> 属性访问。</p>
+</div></article></div></main><footer><div class="paginator"><a href="/2017/07/26/BOM-基础1/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'clarenceneo';
+var disqus_identifier = '2017/07/27/BOM-基础2/';
+var disqus_title = 'BOM 基础（二）';
+var disqus_url = 'http://yoursite.com/2017/07/27/BOM-基础2/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//clarenceneo.disqus.com/count.js" async></script><div class="copyright"><p>© 2016 - 2017 <a href="http://yoursite.com">Clarence Neo</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
